@@ -785,7 +785,7 @@ const App = () => {
       {
         charName: "Ben10",
         charID: 188,
-      },
+      }
     ],
   });
   //Spring method to fade in the entire app over .5 seconds on lunach
