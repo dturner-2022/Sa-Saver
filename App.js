@@ -32,7 +32,7 @@ const App = () => {
 
   //Idea for allocating character images into an array
   const [charImages, selectChar] = useState({
-    selectedChar: "",
+    selectedChar: [4,5,6],
     chars: [
       {
         charName: "Ichigo",
@@ -730,6 +730,62 @@ const App = () => {
         charName: "Butterflyaizen",
         charID: 174,
       },
+      {
+        charName: "Finalaizen",
+        charID: 175,
+      },
+      {
+        charName: "Huecomundokenpachi",
+        charID: 176,
+      },
+      {
+        charName: "Hakudayamamoto",
+        charID: 177,
+      },
+      {
+        charName: "Yachiru",
+        charID: 178,
+      },
+      {
+        charName: "Choenengpoww",
+        charID: 179,
+      },
+      {
+        charName: "Diroyrinker",
+        charID: 180,
+      },
+      {
+        charName: "Ashidokano",
+        charID: 181,
+      },
+      {
+        charName: "Fullbringerichigolvl1",
+        charID: 182,
+      },
+      {
+        charName: "Yukiovorarlberna",
+        charID: 183,
+      },
+      {
+        charName: "Ginjokugo",
+        charID: 184,
+      },
+      {
+        charName: "Rirukadokugamine",
+        charID: 185,
+      },
+      {
+        charName: "Moeshishigawara",
+        charID: 186,
+      },
+      {
+        charName: "Gengar",
+        charID: 187,
+      },
+      {
+        charName: "Ben10",
+        charID: 188,
+      },
     ],
   });
   //Spring method to fade in the entire app over .5 seconds on lunach
@@ -741,29 +797,38 @@ const App = () => {
   //Stores teams data as objects into the local storage if present if not sets to empty array
   const data = JSON.parse(window.localStorage.getItem("Your_Teams") || "[]");
 
-  const i = useRef(0);
+  let i = useRef(0);
 
   function highlightChar(num) {
+    
     if (charImages.selectedChar.includes(num)) {
-      return "selected";
+            return "selected";
     } else {
       return "charImage";
     }
-  }
+}
 
-  function toggleClass(name, id) {
-    //Highlight and add to selectedChar and team arrays 3 distinct clicked on chars
+  const toggleClass= ((name, id) => {
+  //If the character is already in remove from array
+  if (newArr.includes(name)) {
+      let removed = newArr.findIndex(name); 
+      alert("NewArr " + newArr + " Removing :" + name + " Removed" + removed);
+      return
+        }   
+        //Highlight and add to selectedChar and team arrays 3 distinct clicked on chars
     if (i.current < 3 && !newArr.includes(name)) {
       newArr2.push(id);
       newArr.push(name);
-    }
+      
+   }
+
     //After 3 chars names and ids are added set the states for team members and highlight chars
     if (newArr.length === 3) {
       const [n1, n2, n3] = newArr;
-      setTeamMembers(() => n1 + " " + n2 + " " + n3);
-      selectChar({ ...charImages, selectedChar: newArr2 });
+        setTeamMembers(() => n1 + " " + n2 + " " + n3);
+        selectChar({...charImages,selectedChar: newArr2 });
     }
-  }
+  } );
   //On click for char image adds 3 distinct names as strings into an array upon completion fills the input
   //Figure out a way to remove ',' format must be NAME_NAME_NAME for the add team button to work
   // const addMember = (name, index) => {
@@ -834,7 +899,7 @@ const App = () => {
     setTeamBg(teamBg);
     setTeamNumber(teamName.concat(teamNumber));
     setTeamMembers([teamMembers.split(" ", 3)]);
-    setTeamName("");
+    setTeamName("Deafult");
   }
   function removeTeam(id) {
     //Remove button logic looks for id that matches the clicked removed id and
@@ -856,14 +921,14 @@ const App = () => {
     setNumOfTeams(teams.length);
     setTeamName(teamName);
     setTeamNumber(teamNumber);
-    //console.log("Number of teams", numOfTeams);
-    //console.log("ID", teamNumber);
-    //console.log("Number of teams", numOfTeams);
-    //console.log("Team Name", teamName);
-    //console.log("Team members", teamMembers);
-    //console.log("Team number", teamNumber);
+    console.log("Number of teams", numOfTeams);
+    console.log("ID", teamNumber);
+    console.log("Number of teams", numOfTeams);
+    console.log("Team Name", teamName);
+    console.log("Team members", teamMembers);
+    console.log("Team number", teamNumber);
     window.localStorage.setItem("Your_Teams", JSON.stringify(teams));
-  }, [teams, setTeams]);
+  }, [teams, setTeams,selectChar]);
   // componentDidMount();
 
   return (
@@ -908,7 +973,7 @@ const App = () => {
               />
               <p>Select Background: {teamBg}</p>
               <input
-                type="range"
+                type="list"
                 min="0"
                 max="9"
                 value={teamBg}
@@ -957,10 +1022,10 @@ const App = () => {
                     <p>8</p>
                   </div>
                   <div className="bleach9 bgSample">
-                    <p>8</p>
+                    <p>9</p>
                   </div>
                   <div className="bleach10 bgSample">
-                    <p>9</p>
+                    <p>10</p>
                   </div>
                 </section>
               </div>
