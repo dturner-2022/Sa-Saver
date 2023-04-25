@@ -1,4 +1,13 @@
 {
+  "devDependencies": {
+    "netlify-cli": "*"
+  },
+  "scripts": {
+    "build": "mkdir -p dist && cp -R src/* dist/",
+    "start": "netlify dev"
+  }
+},
+{
   "name": "sa-saver",
   "version": "0.1.0",
   "private": true,
