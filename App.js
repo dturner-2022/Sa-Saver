@@ -746,7 +746,7 @@ const App = () => {
         charID: 178,
       },
       {
-        charName: "Choenengpoww",
+        charName: "Choe",
         charID: 179,
       },
       {
@@ -754,7 +754,7 @@ const App = () => {
         charID: 180,
       },
       {
-        charName: "Ashidokano",
+        charName: "Ashido",
         charID: 181,
       },
       {
@@ -762,19 +762,19 @@ const App = () => {
         charID: 182,
       },
       {
-        charName: "Yukiovorarlberna",
+        charName: "Yukio",
         charID: 183,
       },
       {
-        charName: "Ginjokugo",
+        charName: "Ginjo",
         charID: 184,
       },
       {
-        charName: "Rirukadokugamine",
+        charName: "Riruka",
         charID: 185,
       },
       {
-        charName: "Moeshishigawara",
+        charName: "Moe",
         charID: 186,
       },
       {
@@ -953,19 +953,24 @@ const App = () => {
           <div className="teamSettings">
             <div className="nameCreate">
               <input
+              lable="Team Name"
                 type="text"
                 placeholder="Enter team name..."
                 value={teamName}
                 onChange={(e) => setTeamName(e.target.value)}
               />
               <input
+              lable="Team Members"
                 type="text"
-                placeholder="Enter 3 names or click 3 chars..."
+                placeholder="Enter 3 names or click 3 characters..."
                 value={teamMembers}
                 onChange={(e) => setTeamMembers(e.target.value)}
               />
               <p>Select Background: {teamBg}</p>
               <input
+                label ="Background"
+                placeholder="0"
+                title="BG"
                 type="list"
                 min="0"
                 max="9"
@@ -979,7 +984,7 @@ const App = () => {
                 Add Team
               </button>
               <p className="important">
-                Click 3 chars then clicky teh button. Name required.
+                Select 3 characters then click the button. Team name required.
               </p>
               <p className="important">
                 Team Members :
@@ -1024,8 +1029,7 @@ const App = () => {
               </div>
             </div>
           </div>
-          <h1> Team List</h1>
-          <h3> Number of teams {teams.length}</h3>
+         
           <div className=" ">
             {teams.map((team) => {
               return (
