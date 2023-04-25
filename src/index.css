@@ -1,0 +1,294 @@
+.root {
+  margin: 6px 6px;
+}
+* {
+  margin: 5px 5px;
+}
+.App {
+  text-align: center;
+  display: flex;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+  .important{
+    font-weight: bold;
+    color: yellow;
+    font-size: 18px;
+  }
+.selected{
+  width: 45px;
+  height: 45px;
+  border: solid rgb(240, 111, 25) 4px;
+  background-color: rgba(228, 246, 239, 0.954);}
+html {
+  background-Image: url("./site_images/Bleach6.jpg") ;
+  background-color: black;
+}
+.bleach0 {
+  background-Image: url("./site_images/Bleach0.jpg") ;
+  background-color: rgb(239, 39, 25);
+}
+.bleach1 {
+  background-Image: url("./site_images/Bleach1.jpg") ;
+  background-color: rgb(255, 116, 23);
+}
+.bleach2 {
+  background-Image: url("./site_images/Bleach2.jpg") ;
+  background-color: rgb(243, 183, 32);
+}
+.bleach3 {
+  background-Image: url("./site_images/Bleach3.jpg") ;
+  background-color: rgb(190, 243, 32);
+}
+.bleach4 {
+  background-Image: url("./site_images/Bleach4.jpg") ;
+  background-color: rgb(78, 243, 32);
+}
+.bleach5 {
+  background-Image: url("./site_images/Bleach5.jpg") ;
+  background-color: rgb(32, 225, 243);
+}
+.bleach6 {
+  background-Image: url("./site_images/Bleach6.jpg") ;
+  background-color: rgb(32, 148, 243);
+}
+.bleach7 {
+  background-Image: url("./site_images/Bleach7.jpg") ;
+  background-color: rgb(32, 148, 243);
+}
+.bleach8 {
+  background-Image: url("./site_images/Bleach8.jpg") ;
+  background-color: rgb(32, 148, 243);
+}
+.bleach9 {
+  background-Image: url("./site_images/Bleach9.jpg") ;
+  background-color: rgb(32, 148, 243);
+}
+.bleach10 {
+  background-Image: url("./site_images/Bleach10.jpeg") ;
+  background-color: rgb(32, 148, 243);
+}
+.bleach0,.bleach0,.bleach1,.bleach2,.bleach3, .bleach4,
+.bleach5,.bleach6,.bleach7,.bleach8,.bleach9, .bleach10{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.bgSample{
+    display: inline-block;
+    width: 150px;
+    height: 60px;
+    font-size: 25px;
+    font-weight: bolder;
+    color: gold;
+    margin: 2px;
+}
+.bgSample p{
+  margin-left: -30px;
+  margin-bottom: -2px;
+}
+.teamSettings{
+  width: 100%;
+  border: solid 2px red;
+}
+.teamInfo{
+  font-weight: bolder;
+  background-color: black;
+  opacity: .7;
+  margin: 10px;
+  padding: 6px;
+}
+.charTeamOutput{
+  color: red; 
+  text-decoration: underline;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+input {
+  background-color: rgb(213, 213, 213);
+  border: black solid 2px;
+}
+.wrapper {
+  border: black solid 5px;
+  display: flex;
+  width: auto;
+  height: auto;
+}
+.nameCreate {
+  border: black solid 2px;
+  height: auto;
+}
+.teamsHolder {
+  display: flex;
+  color: white;
+  background-color: rgba(78, 171, 253, 0.954);
+  height: auto;
+  margin: 10px;
+  padding: 10px;
+  border: solid 2px green;
+  align-content: center;
+}
+.charImageHolder {
+  min-width: 400px;
+  width: auto;
+  background-color: rgba(0, 80, 145, 0.954);
+}
+.charImage{
+  width: 45px;
+  height: 45px;
+  border: solid black 4px;
+  background-color: rgba(0, 107, 64, 0.954);
+}
+.teamBox {
+  background-color: rgba(163, 212, 255, 0.954);
+  border: solid 3px black;
+  margin: 10px;
+  color: white;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+}
+.teamBox img {
+    width: 60px;
+    height: 60px;
+    border: double 7px #e7fc36;
+}
+.teamMember {
+  background-color: rgb(255, 255, 255);
+  margin: 5px;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  border: solid 2px black;
+}
+.btn {
+  width: 70px;
+  height: 35px;
+  margin: 5px;
+}
+.modal {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  background-color: rgb(255, 107, 107);
+  padding: 1rem;
+  text-align: center;
+  width: 30rem;
+  z-index: 10;
+  position: fixed;
+  top: 20vh;
+  left: calc(50% - 15rem);
+}
+
+.backDrop {
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.45);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.btn {
+  width: auto;
+  height: auto;
+}
+.charImage{
+  margin: 10px;
+}
+.wrapper {
+  margin: 0 auto;
+  display: block;
+  width: 570px;
+}
+  .charImageHolder {
+    margin: 0 auto;
+    width: 40vw;
+  }
+  .teamsHolder {
+    margin: 0 auto;
+    width: 60vw;
+  }
+.nameCreate {
+  flex-direction: column;
+  display: flex;
+}
+.teamBox {
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+@media (min-width: 640px) {
+  /* *{
+    background-color: rgb(255, 106, 0);
+  } */
+  .wrapper {
+    margin: 0 auto;
+    width: 100vw;
+  }
+  .nameCreate {
+    display: block;
+  }
+    .charImageHolder {
+    width: 80vw;
+  }
+  .teamsHolder {
+    width: 80vw;
+  }
+}
+@media (min-width: 1024px) {
+  /* *{
+    background-color: rgb(170, 255, 0);
+  } */
+  .charImageHolder img {
+    margin: 5px;
+  }
+  .wrapper {
+    width: auto;
+    display: flex;
+  }
+  .btn {
+    width: 70px;
+    height: 35px;
+    margin: 5px;
+  }
+  .nameCreate {
+    width: auto;
+  }
+  .teamBox {
+  margin: 0 auto;
+  }
+}
+@media (min-width: 1280px) {
+  /* *{
+    background-color: rgb(0, 110, 13);
+  } */
+  .charImageHolder{
+    margin: 3px;
+  }
+  .wrapper {
+    width: auto;
+    display: flex;
+  }
+  .btn {
+    width: 70px;
+    height: 35px;
+    margin: 5px;
+  }
+  .nameCreate {
+    width: auto;
+  }
+  .teamBox {
+    margin: 0 auto;
+    flex-direction: row;
+  }
+}
