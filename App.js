@@ -1,7 +1,6 @@
 // import React, { Component, createElement } from "react";
 import { useState, useEffect, useRef } from "react";
-import { Spring } from "react-spring";
-import { animated, useSpring } from "react-spring";
+
 
 const App = () => {
   //Database crequest to grab images but fails err blocked by CORS no access control allow
@@ -32,7 +31,7 @@ const App = () => {
 
   //Idea for allocating character images into an array
   const [charImages, selectChar] = useState({
-    selectedChar: [4,5,6],
+    selectedChar: [4, 5, 6],
     chars: [
       {
         charName: "Ichigo",
@@ -785,14 +784,11 @@ const App = () => {
       {
         charName: "Ben10",
         charID: 188,
-      }
+      },
     ],
   });
   //Spring method to fade in the entire app over .5 seconds on lunach
-  const fade = useSpring({
-    from: { opacity: 0 },
-    opacity: 1,
-  });
+ 
   //Test function for the character images being clicked to alert the img info
   //Stores teams data as objects into the local storage if present if not sets to empty array
   const data = JSON.parse(window.localStorage.getItem("Your_Teams") || "[]");
@@ -800,35 +796,33 @@ const App = () => {
   let i = useRef(0);
 
   function highlightChar(num) {
-    
     if (charImages.selectedChar.includes(num)) {
-            return "selected";
+      return "selected";
     } else {
       return "charImage";
     }
-}
+  }
 
-  const toggleClass= ((name, id) => {
-  //If the character is already in remove from array
-  if (newArr.includes(name)) {
-      let removed = newArr.findIndex(name); 
+  const toggleClass = (name, id) => {
+    //If the character is already in remove from array
+    if (newArr.includes(name)) {
+      let removed = newArr.findIndex(name);
       alert("NewArr " + newArr + " Removing :" + name + " Removed" + removed);
-      return
-        }   
-        //Highlight and add to selectedChar and team arrays 3 distinct clicked on chars
+      return;
+    }
+    //Highlight and add to selectedChar and team arrays 3 distinct clicked on chars
     if (i.current < 3 && !newArr.includes(name)) {
       newArr2.push(id);
       newArr.push(name);
-      
-   }
+    }
 
     //After 3 chars names and ids are added set the states for team members and highlight chars
     if (newArr.length === 3) {
       const [n1, n2, n3] = newArr;
-        setTeamMembers(() => n1 + " " + n2 + " " + n3);
-        selectChar({...charImages,selectedChar: newArr2 });
+      setTeamMembers(() => n1 + " " + n2 + " " + n3);
+      selectChar({ ...charImages, selectedChar: newArr2 });
     }
-  } );
+  };
   //On click for char image adds 3 distinct names as strings into an array upon completion fills the input
   //Figure out a way to remove ',' format must be NAME_NAME_NAME for the add team button to work
   // const addMember = (name, index) => {
@@ -928,12 +922,11 @@ const App = () => {
     console.log("Team members", teamMembers);
     console.log("Team number", teamNumber);
     window.localStorage.setItem("Your_Teams", JSON.stringify(teams));
-  }, [teams, setTeams,selectChar]);
+  }, [teams, setTeams, selectChar]);
   // componentDidMount();
 
   return (
     <div class="App">
-      <animated.div style={fade} className="wrapper">
         <div className="charImageHolder">
           {" "}
           {charImages.chars.map((charPic) => {
@@ -1037,11 +1030,7 @@ const App = () => {
             {teams.map((team) => {
               return (
                 <>
-                  <div
-                    className={
-                      "teamBox bleach" + team.Background
-                    }
-                  >
+                  <div className={"teamBox bleach" + team.Background}>
                     <p className="teamInfo" key={team.ID}>
                       Name: {team.Name} <br />
                       ID: {team.ID} <br />
@@ -1072,7 +1061,6 @@ const App = () => {
             })}
           </div>
         </div>
-      </animated.div>
     </div>
   );
 };
