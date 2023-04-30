@@ -27,11 +27,101 @@ const App = () => {
   let newArr = [];
   let newArr2 = [];
   //Bgs for teams
-  const [teamBg, setTeamBg] = useState();
+  const [teamBg, setTeamBg] = useState('Bleach20');
+
+  //Idea for allocating Bleach bg images into an array
+  const [bleachBgs, setBleachBg] = useState({
+    imgs: [
+      {
+        src: "Bleach0",
+      },
+      {
+        src: "Bleach1",
+      },
+      {
+        src: "Bleach2",
+      },
+      {
+        src: "Bleach3",
+      },
+      {
+        src: "Bleach4",
+      },
+      {
+        src: "Bleach5",
+      },
+      {
+        src: "Bleach6",
+      },
+      {
+        src: "Bleach7",
+      },
+      {
+        src: "Bleach8",
+      },
+      {
+        src: "Bleach9",
+      },
+      {
+        src: "Bleach10",
+      },
+      {
+        src: "Bleach11",
+      },
+      {
+        src: "Bleach12",
+      },
+      {
+        src: "Bleach13",
+      },
+      {
+        src: "Bleach14",
+      },
+      {
+        src: "Bleach15",
+      },
+      {
+        src: "Bleach16",
+      },
+      {
+        src: "Bleach17",
+      },
+      {
+        src: "Bleach18",
+      },
+      {
+        src: "Bleach19",
+      },
+      {
+        src: "Bleach20",
+      },
+      {
+        src: "Bleach21",
+      },
+      {
+        src: "Bleach22",
+      },
+      {
+        src: "Bleach23",
+      },
+      {
+        src: "Bleach24",
+      },
+      {
+        src: "Bleach25",
+      },
+      {
+        src: "Bleach26",
+      },
+      {
+        src: "Bleach27",
+      },
+    ],
+  });
 
   //Idea for allocating character images into an array
   const [charImages, selectChar] = useState({
-    selectedChar: [4, 5, 6],
+    selectedChar: [],
     chars: [
       {
         charName: "Ichigo",
@@ -794,35 +884,70 @@ const App = () => {
   const data = JSON.parse(window.localStorage.getItem("Your_Teams") || "[]");
 
   let i = useRef(0);
+  
+ const [selectedChars, setSelectedChars] = useState([
+   "Ichigo",
+   "Rukia",
+   "Orihime",
+ ]);
 
-  function highlightChar(num) {
-    if (charImages.selectedChar.includes(num)) {
-      return "selected";
-    } else {
-      return "charImage";
+//OnClick function for backgrounds removes Bleach text from the img src
+ function handleBgSelection(char){
+setTeamBg(char);
+ }
+
+  const arrayCopy = [...selectedChars];
+// function to use when character clicked
+function handleSelectCharacter(char){
+  const arrayCopy = [...selectedChars];
+  //Checks to see if selected character is already in the array if so do nothing
+  //else add character to the array, reaching 3 characters update teammember state with the names
+  //when reaching 3 character additional clicks will remove 0 index char and add latest click as
+  //at index 2
+  if (arrayCopy.includes(char.charID)) {
+    const index = arrayCopy.findIndex((num) => num === char.charID);
+    if (index !== -1) arrayCopy.splice(index, 1);
+  } else {
+    if (arrayCopy.length === 3) {
+      arrayCopy.shift();
+      setSelectedChars(arrayCopy);
+      setTeamMembers(
+        selectedChars[0] + " " + selectedChars[1] + " " + selectedChars[2] + " "
+      );
     }
+    arrayCopy.push(char.charName);
+  }
+}
+
+  function highlightChar(i) {
+      if (selectedChars.includes(i)) {
+        return "selected";
+      } else {
+        return "charImage";
+      } 
   }
 
-  const toggleClass = (name, id) => {
-    //If the character is already in remove from array
-    if (newArr.includes(name)) {
-      let removed = newArr.findIndex(name);
-      alert("NewArr " + newArr + " Removing :" + name + " Removed" + removed);
-      return;
-    }
-    //Highlight and add to selectedChar and team arrays 3 distinct clicked on chars
-    if (i.current < 3 && !newArr.includes(name)) {
-      newArr2.push(id);
-      newArr.push(name);
-    }
+  //   const toggleClass = (name, id) => {
+  //     //If the character is already in remove from array
+  //     if (newArr.includes(name)) {
+  //       let removed = newArr.findIndex(name);
+  //       alert("NewArr " + newArr + " Removing :" + name + " Removed" + removed);
+  //       return;
+  //     }
+  //     //Highlight and add to selectedChar and team arrays 3 distinct clicked on chars
+  //     if (i.current < 3 && !newArr.includes(name)) {
+  //       newArr2.push(id);
+  //       newArr.push(name);
+  //     }
 
-    //After 3 chars names and ids are added set the states for team members and highlight chars
-    if (newArr.length === 3) {
-      const [n1, n2, n3] = newArr;
-      setTeamMembers(() => n1 + " " + n2 + " " + n3);
-      selectChar({ ...charImages, selectedChar: newArr2 });
-    }
-  };
+  //   //After 3 chars names and ids are added set the states for team members and highlight chars
+  //   if (newArr.length === 3) {
+  //     const [n1, n2, n3] = newArr;
+  //     setTeamMembers(() => n1 + " " + n2 + " " + n3);
+  //     selectChar({ ...charImages, selectedChar: teamMembers});
+  //     setSelectedChars({ ...charImages, selectedChar: teamMembers });
+  //   }
+  // };
   //On click for char image adds 3 distinct names as strings into an array upon completion fills the input
   //Figure out a way to remove ',' format must be NAME_NAME_NAME for the add team button to work
   // const addMember = (name, index) => {
@@ -853,11 +978,9 @@ const App = () => {
 
   //Set intial team members
   const [teamMembers, setTeamMembers] = useState([
-    "Ichigo ",
-    "Orihime ",
-    "Chad ",
+    
   ]);
-  const [teamName, setTeamName] = useState("");
+  const [teamName, setTeamName] = useState("Streak");
   const [numOfTeams, setNumOfTeams] = useState(teams.length);
   const [teamNumber, setTeamNumber] = useState(teams.length);
 
@@ -867,20 +990,19 @@ const App = () => {
     if (!teamName) {
       return;
     }
-
     //Adding new teams information and setting it to the proper keys then adding
     //team content into the main div to be displayed
     const newTeam = {
       ID: teamNumber,
       Name: teamName,
-      Members: teamMembers.split(" ", teamMembers.length),
       Background: teamBg,
+      memberID: [1, 2, 3],
+      Members: teamMembers.split(" ", teamMembers.length),
       imgSrc: [
         require("./" + "char_images/" + teamMembers.split(" ", 1)[0] + ".jpg"),
         require("./" + "char_images/" + teamMembers.split(" ", 2)[1] + ".jpg"),
         require("./" + "char_images/" + teamMembers.split(" ", 3)[2] + ".jpg"),
       ],
-      memberID: [1, 2, 3],
     };
     //Adds newly created team into the teams array.
     //Increases total number of teams
@@ -892,9 +1014,9 @@ const App = () => {
     setTeamName(teamName);
     setTeamBg(teamBg);
     setTeamNumber(teamName.concat(teamNumber));
-    setTeamMembers([teamMembers.split(" ", 3)]);
-    setTeamName("Deafult");
+    setTeamName("Team" + numOfTeams);
   }
+
   function removeTeam(id) {
     //Remove button logic looks for id that matches the clicked removed id and
     //removes the team with that id. If multiple teams get deleted
@@ -915,156 +1037,122 @@ const App = () => {
     setNumOfTeams(teams.length);
     setTeamName(teamName);
     setTeamNumber(teamNumber);
-    console.log("Number of teams", numOfTeams);
-    console.log("ID", teamNumber);
-    console.log("Number of teams", numOfTeams);
-    console.log("Team Name", teamName);
-    console.log("Team members", teamMembers);
-    console.log("Team number", teamNumber);
+    // console.log("Number of teams", numOfTeams);
+    // console.log("Team Name", teamName);
+    // console.log("Team members", teamMembers);
+    // console.log("Team number", teamNumber);
+    // console.log("Img src ", teamNumber);
     window.localStorage.setItem("Your_Teams", JSON.stringify(teams));
-  }, [teams, setTeams, selectChar]);
+  }, [teams, setTeams, selectChar, selectedChars]);
   // componentDidMount();
-
+//console.log("Selected Chars " + selectedChars);
   return (
-    <div class="App">
-        <div className="charImageHolder">
-          {" "}
-          {charImages.chars.map((charPic) => {
-            return (
-              <img
-                key={charPic.charID}
-                draggable="true"
-                className={highlightChar(charPic.charID)}
-                id={charPic.charID}
-                alt={charPic.charName}
-                src={require("./char_images/" + charPic.charName + ".jpg")}
-                onClick={() => toggleClass(charPic.charName, charPic.charID)}
-                // onClick={() => addMember(charPic.charName, charPic.charID)}
-              />
-            );
-          })}
-        </div>
-        {/* <Spring 
+    <div className="App">
+      <div className="charImageHolder">
+        {" "}
+        {charImages.chars.map((charPic) => {
+          return (
+            <img
+              key={charPic.charID}
+              draggable="true"
+              //className={highlightChar(charPic.charID)}
+              className={highlightChar(charPic.charName)}
+              id={charPic.charID}
+              alt={charPic.charName}
+              src={require("./char_images/" + charPic.charName + ".jpg")}
+              //For some reason this onClick only highlights with  charID not charName
+              onClick={() => handleSelectCharacter(charPic)}
+              //onClick={() => toggleClass(charPic.charName, charPic.charID)}
+              // onClick={() => addMember(charPic.charName, charPic.charID)}
+            />
+          );
+        })}
+      </div>
+      {/* <Spring 
         from={{opacity: 0}}
         to={{opacity: 1}}
         config={{delay: 1200 , duration: 3000}}
         />  */}
-        <div className="teamsHolder">
-          <div className="teamSettings">
-            <div className="nameCreate">
-              <input
+      <div className="teamsSettingsHolder">
+        <div className="teamSettings">
+          <div className="nameCreate">
+            <input
               lable="Team Name"
-                type="text"
-                placeholder="Enter team name..."
-                value={teamName}
-                onChange={(e) => setTeamName(e.target.value)}
-              />
-              <input
+              type="text"
+              placeholder="Enter team name..."
+              value={teamName}
+              onChange={(e) => setTeamName(e.target.value)}
+            />
+            <input
               lable="Team Members"
-                type="text"
-                placeholder="Enter 3 names or click 3 characters..."
-                value={teamMembers}
-                onChange={(e) => setTeamMembers(e.target.value)}
-              />
-              <p>Select Background: {teamBg}</p>
-              <input
-                label ="Background"
-                placeholder="0"
-                title="BG"
-                type="list"
-                min="0"
-                max="9"
-                value={teamBg}
-                className="cells-range"
-                name="searacher"
-                onChange={(e) => setTeamBg(e.target.value)}
-              />
-              <br></br>
-              <button className="btn" onClick={() => addTeam()}>
-                Add Team
-              </button>
-              <p className="important">
-                Select 3 characters then click the button. Team name required.
-              </p>
-              <p className="important">
-                Team Members :
-                <span className="charTeamOutput">{teamMembers} </span>
-              </p>
-              <div>
-                <section>
-                  <div className="bleach0 bgSample">
-                    <p>0</p>
-                  </div>
-                  <div className="bleach1 bgSample">
-                    <p>1</p>
-                  </div>
-                  <div className="bleach2 bgSample">
-                    <p>2</p>
-                  </div>
-                  <div className="bleach3 bgSample">
-                    <p>3</p>
-                  </div>
-                  <div className="bleach4 bgSample">
-                    <p>4</p>
-                  </div>
-                  <div className="bleach5 bgSample">
-                    <p>5</p>
-                  </div>
-                  <div className="bleach6 bgSample">
-                    <p>6</p>
-                  </div>
-                  <div className="bleach7 bgSample">
-                    <p>7</p>
-                  </div>
-                  <div className="bleach8 bgSample">
-                    <p>8</p>
-                  </div>
-                  <div className="bleach9 bgSample">
-                    <p>9</p>
-                  </div>
-                  <div className="bleach10 bgSample">
-                    <p>10</p>
-                  </div>
-                </section>
-              </div>
+              type="text"
+              placeholder="Enter 3 names or click 3 characters..."
+              value={teamMembers}
+              onChange={(e) => setTeamMembers(e.target.value)}
+            />
+            <p className="important">Select Background: {teamBg}</p>
+
+            <br></br>
+            <button className="btn" onClick={() => addTeam()}>
+              Add Team
+            </button>
+            <p className="important">
+              Select 3 characters, a background and then "Add Team". Team name
+              required.
+            </p>
+            <p className="important">
+              <span className="important">You have {numOfTeams} team(s)!</span>
+            </p>
+            <div>
+              {" "}
+              {bleachBgs.imgs.map((bg) => {
+                return (
+                  <div
+                    key={bg.src + "key"}
+                    className={bg.src + " bgSample"}
+                    onClick={() => handleBgSelection(bg.src)}
+                  />
+                );
+              })}
             </div>
           </div>
-         
-          <div className=" ">
-            {teams.map((team) => {
-              return (
-                <>
-                  <div className={"teamBox bleach" + team.Background}>
-                    <p className="teamInfo" key={team.ID}>
-                      Name: {team.Name} <br />
-                      ID: {team.ID} <br />
-                      Members: {team.Members + " "}
-                    </p>
-                    {/* MemberID {team.memberID} */}
-                    <img
-                      // onClick={() => speak(team.Members)}
-                      src={team.imgSrc[0]}
-                      alt={team.Members[0]}
-                    />
-                    <img
-                      // onClick={() => speak(team.Name)}
-                      src={team.imgSrc[1]}
-                      alt={team.Members[1]}
-                    />
-                    <img
-                      // onClick={() => speak(team.ID)}
-                      src={team.imgSrc[2]}
-                      alt={team.Members[2]}
-                    />
-                    <button className="btn" onClick={() => removeTeam(team.ID)}>
-                      Remove
-                    </button>
-                  </div>
-                </>
-              );
-            })}
-          </div>
         </div>
+      </div>
+      <div className="teamsHolder">
+        <div className="mainTeamHolder">
+          {teams.map((team) => {
+            return (
+              <>
+                <div className={"teamBox Bleachbg " + team.Background}>
+                  <p className="teamInfo" key={team.ID}>
+                    Name: {team.Name} <br />
+                    Members: {team.Members + " "}
+                  </p>
+                  {/* MemberID {team.memberID} */}
+                  <img
+                    // onClick={() => speak(team.Members)}
+                    src={team.imgSrc[0]}
+                    alt={team.Members[0]}
+                  />
+                  <img
+                    // onClick={() => speak(team.Name)}
+                    src={team.imgSrc[1]}
+                    alt={team.Members[1]}
+                  />
+                  <img
+                    // onClick={() => speak(team.ID)}
+                    src={team.imgSrc[2]}
+                    alt={team.Members[2]}
+                  />
+                  <button className="btn" onClick={() => removeTeam(team.ID)}>
+                    Remove
+                  </button>
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };
