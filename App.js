@@ -922,19 +922,17 @@ const App = () => {
 
   const [selectedChars, setSelectedChars] = useState([" ", " ", " "]);
 
-  //OnClick function for backgrounds removes Naruto text from the img src
+  //OnClick function for backgrounds removes Bleach text from the img src
   function handleBgSelection(bg) {
     setTeamBg(bg);
   }
 
-  function isBgSelected(bg){
+  function isBgSelected(bg) {
     if (bg.src === teamBg) {
       return "bgSample selected " + bg.src;
+    } else {
+      return "bgSample ";
     }
-    else{
-      return "bgSample " ;
-    }
-  
   }
   const arrayCopy = [...selectedChars];
   // function to use when character clicked
@@ -1035,9 +1033,9 @@ const App = () => {
       memberID: [1, 2, 3],
       Members: teamMembers,
       imgSrc: [
-        require("./" + "char_images/" + teamMembers[0] + ".png"),
-        require("./" + "char_images/" + teamMembers[1] + ".png"),
-        require("./" + "char_images/" + teamMembers[2] + ".png"),
+        require("./" + "char_images/" + teamMembers[0] + ".webp"),
+        require("./" + "char_images/" + teamMembers[1] + ".webp"),
+        require("./" + "char_images/" + teamMembers[2] + ".webp"),
       ],
     };
     //Adds newly created team into the teams array.
@@ -1090,12 +1088,13 @@ const App = () => {
           return (
             <img
               key={charPic.charID}
+              loading="lazy"
               draggable="true"
               //className={highlightChar(charPic.charID)}
               className={highlightChar(charPic.charName)}
               id={charPic.charID}
               alt={charPic.charName}
-              src={require("./char_images/" + charPic.charName + ".png")}
+              src={require("./char_images/" + charPic.charName + ".webp")}
               //For some reason this onClick only highlights with  charID not charName
               onClick={() => handleSelectCharacter(charPic)}
               //onClick={() => toggleClass(charPic.charName, charPic.charID)}
@@ -1146,6 +1145,7 @@ const App = () => {
                   <div
                     key={bg.src + "key"}
                     className={isBgSelected(bg) + " " + bg.src}
+                    loading="lazy"
                     onClick={() => handleBgSelection(bg.src)}
                   />
                 );
@@ -1167,20 +1167,26 @@ const App = () => {
                   {/* MemberID {team.memberID} */}
                   <img
                     // onClick={() => speak(team.Members)}
+                    loading="lazy"
                     src={team.imgSrc[0]}
                     alt={team.Members[0]}
                   />
                   <img
                     // onClick={() => speak(team.Name)}
+                    loading="lazy"
                     src={team.imgSrc[1]}
                     alt={team.Members[1]}
                   />
                   <img
                     // onClick={() => speak(team.ID)}
+                    loading="lazy"
                     src={team.imgSrc[2]}
                     alt={team.Members[2]}
                   />
-                  <button className="btn remove" onClick={() => removeTeam(team.ID)}>
+                  <button
+                    className="btn remove"
+                    onClick={() => removeTeam(team.ID)}
+                  >
                     Remove
                   </button>
                 </div>
