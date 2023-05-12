@@ -1,8 +1,8 @@
 .root {
-  margin: 6px 6px;
+  margin: 2px 2px;
 }
 * {
-  margin: 5px 5px;
+  margin: 1px 1px;
 }
 .App {
   text-align: center;
@@ -18,17 +18,21 @@ body {
 }
   .important{
     font-weight: bold;
-    color: yellow;
+    color: rgb(255, 221, 0);
     font-size: 17px;
   }
 .selected{
-  width: 45px;
-  height: 45px;
-  border: solid rgb(240, 111, 25) 3px;
-  background-color: rgba(228, 246, 239, 0.954);}
+  width: 41px;
+  height: 41px;
+  border: solid rgb(240, 140, 25) 3px;
+  background-color: rgba(228, 246, 239, 0.954);
+ transition: .2s;
+}
 html {
-  background-Image: url("./site_images/Bleach6.jpg") ;
-  background-color: black;
+  background-Image: url("./site_images/Bleach22.jpg") ;
+  background-color: rgb(186, 193, 194);
+  background-position: 50%;
+  background-size: contain;
 }
 .Bleach0 {
   background-Image: url("./site_images/Bleach0.jpg") ;
@@ -111,7 +115,7 @@ html {
   background-color: rgb(32, 148, 243);
 }
 .Bleach20 {
-  background-Image: url("./site_images/Bleach10.jpg") ;
+  background-Image: url("./site_images/Bleach20.jpg") ;
   background-color: rgb(32, 148, 243);
 }
 .Bleach21 {
@@ -142,16 +146,33 @@ html {
   background-Image: url("./site_images/Bleach27.jpg") ;
   background-color: rgb(32, 148, 243);
 }
+.Bleach28 {
+  background-Image: url("./site_images/Bleach28.jpg") ;
+  background-color: rgb(32, 148, 243);
+}
+.Bleach29 {
+  background-Image: url("./site_images/Bleach29.jpg") ;
+  background-color: rgb(32, 148, 243);
+}
+.Bleach30 {
+  background-Image: url("./site_images/Bleach30.jpg") ;
+  background-color: rgb(32, 148, 243);
+}
+.Bleach31 {
+  background-Image: url("./site_images/Bleach31.jpg") ;
+  background-color: rgb(32, 148, 243);
+}
 .Bleachbg{
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+
 .bgSample{
     display: inline-block;
     width: 160px;
-    height: 60px;
+    height: 70px;
     font-size: 12px;
     font-weight: bolder;
     color: black;
@@ -159,6 +180,12 @@ html {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    transition: .3s;
+}
+.bgSample:hover{
+  transform: scale(2.3);
+  cursor: pointer;
+  opacity: 1;
 }
 .bgSamplep{
   width: 20%;
@@ -168,26 +195,25 @@ html {
 }
 .teamSettings{
   /*border: solid 2px red; */
+  opacity: .9;
 }
 .teamsSettingsHolder{
-  width: 65%;
+  width: 60%;
   font-weight: bolder;
-  background-color: rgb(12, 98, 190);
+  background-color: rgba(0, 0, 0, 0.8);
   margin: 2px;
   padding: 2px;
 
 }
 .teamInfo{
   font-weight: bolder;
-  background-color: rgb(0, 0, 0);
-  opacity: .7;
+  background-color: rgba(0, 0, 0,.4);
+  opacity: .8;
   margin: 2px;
   padding: 2px;
 }
 .mainTeamHolder{
-  width: 100%;
   font-weight: bolder;
-  background-color: rgb(12, 98, 190);
   margin: 2px;
   padding: 2px;
 
@@ -218,7 +244,6 @@ input {
 .teamsHolder {
   display: flex;
   color: white;
-  background-color: rgba(78, 171, 253, 0.954);
   height: auto;
   margin: 5px;
   padding: 5px;
@@ -228,27 +253,33 @@ input {
 .charImageHolder {
   min-width: 350px;
   width: auto;
-  background-color: rgba(0, 80, 145, 0.954);
 }
 .charImage{
-  width: 45px;
-  height: 45px;
+  width: 46px;
+  height: 46px;
   border: solid black 2px;
-  background-color: rgba(0, 107, 64, 0.954);
+  background-color: rgba(0, 107, 61, 0.9);
+  transition: .2s;
+}
+.charImage:hover{
+  cursor: pointer;
+  transform: scale(1.5);
 }
 .teamBox {
-  background-color: rgba(163, 212, 255, 0.954);
+  background-color: rgba(163, 255, 186, 0.9);
   margin: 5px;
   color: white;
   display: block;
   justify-content: center;
   text-align: center;
   font-weight: bold;
+  transition: .3s;
 }
 .teamBox img {
     width: 60px;
     height: 60px;
-    border: double 3px #e7fc36;
+    border: double 3px #fcd436;
+    transition: .3s;
 }
 .teamMember {
   background-color: rgb(255, 255, 255);
@@ -258,11 +289,60 @@ input {
   height: 50px;
   border: solid 2px black;
 }
+ 
+.teamBox img:hover   {animation: 1s ani-nav  ease-in-out alternate ;  border: rgb(255, 255, 255) solid 3px;
 
+}
+
+@keyframes ani-nav{
+	0%{
+
+	transform: rotate(0deg);
+	}
+	 	30%{
+
+	transform: rotate(-50deg);
+	}
+  	60%{
+
+	transform: rotate(20deg);
+	}
+	100%{
+	transform: rotate(380deg);
+
+	}
+}
+.remove{
+  transition: .3s;
+}
+.remove:hover{
+  cursor:pointer;
+  background-color: red;
+  color: white;
+animation: .36s ani-shake  ease-in-out alternate infinite;}
+ 
+ @keyframes ani-shake{
+	0%{
+
+	transform: translateY(5px);
+	}
+	 	30%{
+
+	transform: translateX(-5px);
+	}
+  	60%{
+
+	transform: translateX(5px);
+	}
+	100%{
+	transform: translateY(-5px);
+
+	}
+}
 .modal {
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
  /*border-radius: 6px;*/
-  background-color: rgb(255, 107, 107);
+  background-color: rgb(107, 193, 255);
   padding: 1rem;
   text-align: center;
   width: 30rem;
@@ -275,7 +355,7 @@ input {
 .backDrop {
   position: fixed;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: 100vh;
   top: 0;
@@ -295,20 +375,17 @@ input {
 }
   .charImageHolder {
     margin: 0 auto;
-    width: 70vw;
+    width: 80vw;
   }
   .teamsHolder {
     margin: 0 auto;
-    width: 30vw;
   }
 .nameCreate {
   flex-direction: column;
   display: flex;
 }
 .teamBox {
-  width: 350px;
-  margin: 0 auto;
-  flex-direction: column;
+
 }
 
 @media (min-width: 640px) {
@@ -323,10 +400,10 @@ input {
     display: block;
   }
     .charImageHolder {
-    width: 90vw;
+    width: 70vw;
   }
   .teamsHolder {
-    width: 60vw;
+    width: 50vw;
   }
 }
 @media (min-width: 1024px) {
