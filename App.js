@@ -1,7 +1,6 @@
 // import React, { Component, createElement } from "react";
 import { useState, useEffect, useRef } from "react";
 
-
 const App = () => {
   //Database crequest to grab images but fails err blocked by CORS no access control allow
   // function componentDidMount() {
@@ -27,7 +26,7 @@ const App = () => {
   let newArr = [];
   let newArr2 = [];
   //Bgs for teams
-  const [teamBg, setTeamBg] = useState('Bleach20');
+  const [teamBg, setTeamBg] = useState("Bleach20");
 
   //Idea for allocating Bleach bg images into an array
   const [bleachBgs, setBleachBg] = useState({
@@ -116,6 +115,18 @@ const App = () => {
       {
         src: "Bleach27",
       },
+      {
+        src: "Bleach28",
+      },
+      {
+        src: "Bleach29",
+      },
+      {
+        src: "Bleach30",
+      },
+      {
+        src: "Bleach31",
+      },
     ],
   });
 
@@ -124,807 +135,834 @@ const App = () => {
     selectedChar: [],
     chars: [
       {
-        charName: "Ichigo",
+        charName: "Kurosaki-Ichigo",
         charID: 0,
       },
       {
-        charName: "Rukia",
+        charName: "Kuchiki-Rukia",
         charID: 1,
       },
       {
-        charName: "Orihime",
+        charName: "Inoue-Orihime",
         charID: 2,
       },
       {
-        charName: "Tatsuki",
+        charName: "Arisawa-Tatsuki",
         charID: 3,
       },
       {
-        charName: "Chad",
+        charName: "Yasutora-Sado",
         charID: 4,
       },
       {
-        charName: "Yuzu",
+        charName: "Kurosaki-Yuzu",
         charID: 5,
       },
       {
-        charName: "Kon",
+        charName: "Kurosaki-Karin",
         charID: 6,
       },
       {
-        charName: "Don",
+        charName: "Kon",
         charID: 7,
       },
       {
-        charName: "Uryuu",
+        charName: "Don-Kanonji",
         charID: 8,
       },
       {
-        charName: "Jinta",
+        charName: "Ishida-Uryuu",
         charID: 9,
       },
       {
-        charName: "Ururu",
+        charName: "Hinakari-Jinta",
         charID: 10,
       },
       {
-        charName: "Tessai",
+        charName: "Tsumugiya-Ururu",
         charID: 11,
       },
       {
-        charName: "Menos",
+        charName: "Tsukabishi-Tessai",
         charID: 12,
       },
       {
-        charName: "Shrieker",
+        charName: "Menos-Grande",
         charID: 13,
       },
       {
-        charName: "Numb",
+        charName: "Shrieker",
         charID: 14,
       },
       {
-        charName: "Fisher",
+        charName: "Numb-Chandelier",
         charID: 15,
       },
       {
-        charName: "Metastacia",
+        charName: "Grand-Fisher",
         charID: 16,
       },
       {
-        charName: "Breadhime",
+        charName: "Metastacia",
         charID: 17,
       },
       {
-        charName: "Hooleer",
+        charName: "Runuganga",
         charID: 18,
       },
       {
-        charName: "Ganju",
+        charName: "Hooleer",
         charID: 19,
       },
       {
-        charName: "Kuukaku",
+        charName: "Shiba-Ganju",
         charID: 20,
       },
       {
-        charName: "Jidanbou",
+        charName: "Shiba-Kuukaku",
         charID: 21,
       },
       {
-        charName: "Jiroubou",
+        charName: "Ikkanzaka-Jidanbou",
         charID: 22,
       },
       {
-        charName: "Kiyone",
+        charName: "Ikkanzaka-Jiroubou",
         charID: 23,
       },
       {
-        charName: "Hanatarou",
+        charName: "Kotetsu-Kiyone",
         charID: 24,
       },
       {
-        charName: "Yumichika",
+        charName: "Yamada-Hanatarou",
         charID: 25,
       },
       {
-        charName: "Ikkaku",
+        charName: "Ayasegawa-Yumichika",
         charID: 26,
       },
       {
-        charName: "Choujirou",
+        charName: "Madarame-Ikkaku",
         charID: 27,
       },
       {
-        charName: "Omaeda",
+        charName: "Sasakibe-Choujirou",
         charID: 28,
       },
       {
-        charName: "Isane",
+        charName: "Omaeda-Marechiyo",
         charID: 29,
       },
       {
-        charName: "Momo",
+        charName: "Kira-Izuru",
         charID: 30,
       },
       {
-        charName: "Renji",
+        charName: "Kotetsu-Isane",
         charID: 31,
       },
       {
-        charName: "Iba",
+        charName: "Hinamori-Momo",
         charID: 32,
       },
       {
-        charName: "Nanao",
+        charName: "Abarai-Renji",
         charID: 33,
       },
       {
-        charName: "Hisagi",
+        charName: "Iba-Tetsuzaemon",
         charID: 34,
       },
       {
-        charName: "Rangiku",
+        charName: "Ise-Nanao",
         charID: 35,
       },
       {
-        charName: "Nemu",
+        charName: "Hisagi-Shuhei",
         charID: 36,
       },
       {
-        charName: "Kaien",
+        charName: "Matsumoto-Rangiku",
         charID: 37,
       },
       {
-        charName: "Yamamoto",
+        charName: "Kurotsuchi-Nemu",
         charID: 38,
       },
       {
-        charName: "Soifon",
+        charName: "Shiba-Kaien",
         charID: 39,
       },
       {
-        charName: "Gin",
+        charName: "Yamamoto-Genryuusai",
         charID: 40,
       },
       {
-        charName: "Retsu",
+        charName: "Soifon",
         charID: 41,
       },
       {
-        charName: "Aizen",
+        charName: "Ichimaru-Gin",
         charID: 42,
       },
       {
-        charName: "Byakuya",
+        charName: "Unohana-Retsu",
         charID: 43,
       },
       {
-        charName: "Sajin",
+        charName: "Aizen-Sousuke",
         charID: 44,
       },
       {
-        charName: "Shunsui",
+        charName: "Kuchiki-Byakuya",
         charID: 45,
       },
       {
-        charName: "Tousen",
+        charName: "Komamura-Sajin",
         charID: 46,
       },
       {
-        charName: "Toushirou",
+        charName: "Kyouraku-Shunsui",
         charID: 47,
       },
       {
-        charName: "Kenpachi",
+        charName: "Tousen-Kaname",
         charID: 48,
       },
       {
-        charName: "Mayuri",
+        charName: "Hitsugaya-Toushirou",
         charID: 49,
       },
       {
-        charName: "Ukitake",
+        charName: "Zaraki-Kenpachi",
         charID: 50,
       },
       {
-        charName: "Finalformuryuu",
+        charName: "Kurotsuchi-Mayuri",
         charID: 51,
       },
       {
-        charName: "Kisuke",
+        charName: "Ukitake-Joushiro",
         charID: 52,
       },
       {
-        charName: "Yoruichi",
+        charName: "Final-Form-Uryuu",
         charID: 53,
       },
       {
-        charName: "Ryuuken",
+        charName: "Urahara-Kisuke",
         charID: 54,
       },
       {
-        charName: "Shikairukia",
+        charName: "Shihouin-Yoruichi",
         charID: 55,
       },
       {
-        charName: "Demonsado",
+        charName: "Ishida-Ryuuken",
         charID: 56,
       },
       {
-        charName: "Sparrowuryuu",
+        charName: "Shikai-Rukia",
         charID: 57,
       },
       {
-        charName: "Kidokira",
+        charName: "Demon-Sado",
         charID: 58,
       },
       {
-        charName: "Kidomomo",
+        charName: "Sparrow-Uryuu",
         charID: 59,
       },
       {
-        charName: "Huecomundobyakuya",
+        charName: "Kidou-Kira",
         charID: 60,
       },
       {
-        charName: "Bankaiichigo",
+        charName: "Kidou-Momo",
         charID: 61,
       },
       {
-        charName: "Bankaiikkaku",
+        charName: "Hueco-Mundo-Byakuya",
         charID: 62,
       },
       {
-        charName: "Bankairenji",
+        charName: "Bankai-Ichigo",
         charID: 63,
       },
       {
-        charName: "Bankaisoifon",
+        charName: "Bankai-Ikkaku",
         charID: 64,
       },
       {
-        charName: "Bankaigin",
+        charName: "Bankai-Renji",
         charID: 65,
       },
       {
-        charName: "Bankaibyakuya",
+        charName: "Bankai-Soifon",
         charID: 66,
       },
       {
-        charName: "Bankaisajin",
+        charName: "Bankai-Gin",
         charID: 67,
       },
       {
-        charName: "Bankaitoshirou",
+        charName: "Bankai-Byakuya",
         charID: 68,
       },
       {
-        charName: "Bankaimayuri",
+        charName: "Bankai-Komamura",
         charID: 69,
       },
       {
-        charName: "Armoredyoruichi",
+        charName: "Bankai-Hitsugaya",
         charID: 70,
       },
       {
-        charName: "Kidokisuke",
+        charName: "Bankai-Mayuri",
         charID: 71,
       },
       {
-        charName: "Yylfordt",
+        charName: "Armored-Yoruichi",
         charID: 72,
       },
       {
-        charName: "Edrad",
+        charName: "Kidou-Urahara",
         charID: 73,
       },
       {
-        charName: "Shawlong",
+        charName: "Kurosaki-Isshin",
         charID: 74,
       },
       {
-        charName: "Demoura",
+        charName: "Yylfordt-Granz",
         charID: 75,
       },
       {
-        charName: "Aisslinger",
+        charName: "Edrad-Liones",
         charID: 76,
       },
       {
-        charName: "Menoly",
+        charName: "Shawlong-Qufang",
         charID: 77,
       },
       {
-        charName: "Loly",
+        charName: "Demoura-Zodd",
         charID: 78,
       },
       {
-        charName: "Tesla",
+        charName: "Aisslinger-Wernarr",
         charID: 79,
       },
       {
-        charName: "Dondochakka",
+        charName: "Menoly-Mallia",
         charID: 80,
       },
       {
-        charName: "Pesche",
+        charName: "Loly-Aivirrne",
         charID: 81,
       },
       {
-        charName: "Sunsun",
+        charName: "Tesla-Lindocruz",
         charID: 82,
       },
       {
-        charName: "Mila",
+        charName: "Dondochakka-Bilstin",
         charID: 83,
       },
       {
-        charName: "Apacci",
+        charName: "Pesche-Guatiche",
         charID: 84,
       },
       {
-        charName: "Charlotte",
+        charName: "Sun-Sun",
         charID: 85,
       },
       {
-        charName: "Redder",
+        charName: "Mila-Rose",
         charID: 86,
       },
       {
-        charName: "Findorr",
+        charName: "Apacci",
         charID: 87,
       },
       {
-        charName: "Vega",
+        charName: "Dark-Rukia",
         charID: 88,
       },
       {
-        charName: "Lilynette",
+        charName: "Senna",
         charID: 89,
       },
       {
-        charName: "Mosqueda",
+        charName: "Bankai-Unohana",
+        charID: 90,
+      },
+      {
+        charName: "Bankai-Kenpachi",
         charID: 91,
       },
       {
-        charName: "Cirucci",
+        charName: "Charlotte-Cuuhlhourne",
         charID: 92,
       },
       {
-        charName: "Panini",
+        charName: "Avirama-Redder",
         charID: 93,
       },
       {
-        charName: "Ayon",
+        charName: "Findorr-Calius",
         charID: 94,
       },
       {
-        charName: "Rudbornn",
+        charName: "Ggio-Vega",
         charID: 95,
       },
       {
-        charName: "Wonderweiss",
+        charName: "Lilynette-Gingerbuck",
         charID: 96,
       },
       {
-        charName: "Yammy",
+        charName: "Gantebainne-Mosqueda",
         charID: 97,
       },
       {
-        charName: "Aaroniero",
+        charName: "Yammy-Riyalgo",
         charID: 98,
       },
       {
-        charName: "Szayel",
+        charName: "Resurreccion-Yammy",
         charID: 99,
       },
       {
-        charName: "Zommari",
+        charName: "Hollow-Ichigo",
         charID: 100,
       },
       {
-        charName: "Luppi",
+        charName: "Cirucci-Sanderwicci",
         charID: 101,
       },
       {
-        charName: "Grimmjow",
+        charName: "Don-Panini",
         charID: 102,
       },
       {
-        charName: "Nnoitra",
+        charName: "Ayon",
         charID: 103,
       },
       {
-        charName: "Ulquiorra",
+        charName: "Rudbornn-Chelute",
         charID: 104,
       },
       {
-        charName: "Harribel",
+        charName: "Wonderweiss-Margela",
         charID: 105,
       },
       {
-        charName: "Barragan",
+        charName: "Aaroniero-Arruruerie",
         charID: 106,
       },
       {
-        charName: "Starrk",
+        charName: "Szayel-Aporro-Granz",
         charID: 107,
       },
       {
-        charName: "Reswonderweiss",
+        charName: "Zommari-Leroux",
         charID: 108,
       },
       {
-        charName: "Resszayel",
+        charName: "Luppi-Antenor",
         charID: 109,
       },
       {
-        charName: "Resgrimmjow",
+        charName: "Grimmjow-Jaegerjaquez",
         charID: 110,
       },
       {
-        charName: "Resulquiorra",
+        charName: "Nnoitra-Jiruga",
         charID: 111,
       },
       {
-        charName: "Segundaulquiorra",
+        charName: "Ulquiorra-Cifer",
         charID: 112,
       },
       {
-        charName: "Childnel",
+        charName: "Tia-Harribel",
         charID: 113,
       },
       {
-        charName: "Adultnel",
+        charName: "Barragan-Luisenbarn",
         charID: 114,
       },
       {
-        charName: "Resharribel",
+        charName: "Coyote-Starrk",
         charID: 115,
       },
       {
-        charName: "Resbarragan",
+        charName: "Resurreccion-Szayel",
         charID: 116,
       },
       {
-        charName: "Resstarrk",
+        charName: "Resurreccion-Grimmjow",
         charID: 117,
       },
       {
-        charName: "Resyammy",
+        charName: "Resurreccion-Ulquiorra",
         charID: 118,
       },
       {
-        charName: "Hollowtousen",
+        charName: "Segunda-Ulquiorra",
         charID: 119,
       },
       {
-        charName: "Restousen",
+        charName: "Resurreccion-Harribel",
         charID: 120,
       },
       {
-        charName: "Vizardichigo",
+        charName: "Resurreccion-Barragan",
         charID: 121,
       },
       {
-        charName: "Lisa",
+        charName: "Resurreccion-Starrk",
         charID: 122,
       },
       {
-        charName: "Mashiro",
+        charName: "Resurreccion-Wonderweiss",
         charID: 123,
       },
       {
-        charName: "Hiyori",
+        charName: "Child-Nel",
         charID: 124,
       },
       {
-        charName: "Hachigen",
+        charName: "Nelliel-Tu-Odelschwanck",
         charID: 125,
       },
       {
-        charName: "Rojuro",
+        charName: "Hollow-Tousen",
         charID: 126,
       },
       {
-        charName: "Love",
+        charName: "Resurreccion-Tousen",
         charID: 127,
       },
       {
-        charName: "Kensei",
+        charName: "Inner-Ichigo",
         charID: 128,
       },
       {
-        charName: "Shinji",
+        charName: "Zangetsu",
         charID: 129,
       },
       {
-        charName: "Hollowichigo",
+        charName: "Pre-Ascension-Aizen",
         charID: 130,
       },
       {
-        charName: "Innerichigo",
+        charName: "Koutotsu",
         charID: 131,
       },
       {
-        charName: "Zangetsu",
+        charName: "Vizard-Ichigo",
         charID: 132,
       },
       {
-        charName: "Preascensionaizen",
+        charName: "Yadomaru-Lisa",
         charID: 133,
       },
       {
-        charName: "Koutotsu",
+        charName: "Kuna-Mashiro",
         charID: 134,
       },
       {
-        charName: "Senna",
+        charName: "Sarugaki-Hiyori",
         charID: 135,
       },
       {
-        charName: "Darkrukia",
+        charName: "Ushoda-Hachigen",
         charID: 136,
       },
       {
-        charName: "Suzumebachi",
+        charName: "Otoribashi-Rojuro",
         charID: 137,
       },
       {
-        charName: "Kazeshini",
+        charName: "Aikawa-Love",
         charID: 138,
       },
       {
-        charName: "Sodenoshirayuki",
+        charName: "Muguruma-Kensei",
         charID: 139,
       },
       {
-        charName: "Tenken",
+        charName: "Hirako-Shinji",
         charID: 140,
       },
       {
-        charName: "Ashisogijizo",
+        charName: "Suzumebachi",
         charID: 141,
       },
       {
-        charName: "Gonryomaru",
+        charName: "Tenken",
         charID: 142,
       },
       {
-        charName: "Kogakuchiki",
+        charName: "Sode-no-Shirayuki",
         charID: 143,
       },
       {
-        charName: "Arturoplateado",
+        charName: "Kazeshini",
         charID: 144,
       },
       {
-        charName: "Senbonzakura",
+        charName: "Ashisogi-Jizo",
         charID: 145,
       },
       {
-        charName: "Ruriirokujaku",
+        charName: "Gonryomaru",
         charID: 146,
       },
       {
-        charName: "Hozukimaru",
+        charName: "Koga-Kuchiki",
         charID: 147,
       },
       {
-        charName: "Haineko",
+        charName: "Arturo-Plateado",
         charID: 148,
       },
       {
-        charName: "Saru",
+        charName: "Senbonzakura",
         charID: 149,
       },
       {
-        charName: "Hebi",
+        charName: "Ruri-Iro-Kujaku",
         charID: 150,
       },
       {
-        charName: "Muramasa",
+        charName: "Hozukimaru",
         charID: 151,
       },
       {
-        charName: "Wabisuke",
+        charName: "Haineko",
         charID: 152,
       },
       {
-        charName: "Tobiume",
+        charName: "Saru",
         charID: 153,
       },
       {
-        charName: "Sogyonokotowari",
+        charName: "Hebi",
         charID: 154,
       },
       {
-        charName: "Gegetsuburi",
+        charName: "Muramasa",
         charID: 155,
       },
       {
-        charName: "Ryujinjakka",
+        charName: "Wabisuke",
         charID: 156,
       },
       {
-        charName: "Katen",
+        charName: "Tobiume",
         charID: 157,
       },
       {
-        charName: "Kyokotsu",
+        charName: "Sogyo-no-Kotowari",
         charID: 158,
       },
       {
-        charName: "Hyorinmaru",
+        charName: "Ryujin-Jakka",
         charID: 159,
       },
       {
-        charName: "Broly",
+        charName: "Gegetsuburi",
         charID: 160,
       },
       {
-        charName: "Hisagomaru",
+        charName: "Kyokotsu",
         charID: 161,
       },
       {
-        charName: "Narunosuke",
+        charName: "Katen",
         charID: 162,
       },
       {
-        charName: "Kyoko",
+        charName: "Broly",
         charID: 163,
       },
       {
-        charName: "Kirikaze",
+        charName: "Hyorinmaru",
         charID: 164,
       },
       {
-        charName: "Hollowmuramasa",
+        charName: "Hisagomaru",
         charID: 165,
       },
       {
-        charName: "Sasori",
+        charName: "Narunosuke",
         charID: 166,
       },
       {
-        charName: "Fullbringerorihime",
+        charName: "Kyoko-Haida",
         charID: 167,
       },
       {
-        charName: "Fullbringersado",
+        charName: "Kirikaze",
         charID: 168,
       },
       {
-        charName: "Uryuutla",
+        charName: "Hollow-Muramasa",
         charID: 169,
       },
       {
-        charName: "Tsukishima",
+        charName: "Sasori-of-the-Red-Sand-(S)",
         charID: 170,
       },
       {
-        charName: "Dangaiichigo",
+        charName: "Fullbringer-Orihime",
         charID: 171,
       },
       {
-        charName: "Chrysalisaizen",
+        charName: "Fullbringer-Sado",
         charID: 172,
       },
       {
-        charName: "Ascendedaizen",
+        charName: "Uryuu-(TLA)",
         charID: 173,
       },
       {
-        charName: "Butterflyaizen",
+        charName: "Tsukishima",
         charID: 174,
       },
       {
-        charName: "Finalaizen",
+        charName: "Dangai-Ichigo",
         charID: 175,
       },
       {
-        charName: "Huecomundokenpachi",
+        charName: "Chrysalis-Aizen",
         charID: 176,
       },
       {
-        charName: "Hakudayamamoto",
+        charName: "Ascended-Aizen",
         charID: 177,
       },
       {
-        charName: "Yachiru",
+        charName: "Butterfly-Aizen",
         charID: 178,
       },
       {
-        charName: "Choe",
+        charName: "Final-Aizen",
         charID: 179,
       },
       {
-        charName: "Diroyrinker",
+        charName: "Hueco-Mundo-Kenpachi",
         charID: 180,
       },
       {
-        charName: "Ashido",
+        charName: "Hakuda-Yamamoto",
         charID: 181,
       },
       {
-        charName: "Fullbringerichigolvl1",
+        charName: "Yachiru-Kusajishi",
         charID: 182,
       },
       {
-        charName: "Yukio",
+        charName: "Choe-Neng-Poww",
         charID: 183,
       },
       {
-        charName: "Ginjo",
+        charName: "Nirgge-Parduoc",
         charID: 184,
       },
       {
-        charName: "Riruka",
+        charName: "Di-Roy-Rinker",
         charID: 185,
       },
       {
-        charName: "Moe",
+        charName: "Ashido-Kano",
         charID: 186,
       },
       {
-        charName: "Gengar",
+        charName: "Fullbringer-Ichigo-lvl-1",
         charID: 187,
       },
       {
-        charName: "Ben10",
+        charName: "Yukio-Vorarlberna",
         charID: 188,
+      },
+      {
+        charName: "Ginjo-Kugo",
+        charID: 189,
+      },
+      {
+        charName: "Riruka-Dokugamine",
+        charID: 190,
+      },
+      {
+        charName: "Moe-Shishigawara",
+        charID: 191,
+      },
+      {
+        charName: "Gengar",
+        charID: 192,
+      },
+      {
+        charName: "Ben-10",
+        charID: 193,
       },
     ],
   });
   //Spring method to fade in the entire app over .5 seconds on lunach
- 
+
   //Test function for the character images being clicked to alert the img info
   //Stores teams data as objects into the local storage if present if not sets to empty array
   const data = JSON.parse(window.localStorage.getItem("Your_Teams") || "[]");
 
   let i = useRef(0);
-  
- const [selectedChars, setSelectedChars] = useState([
-   "Ichigo",
-   "Rukia",
-   "Orihime",
- ]);
 
-//OnClick function for backgrounds removes Bleach text from the img src
- function handleBgSelection(char){
-setTeamBg(char);
- }
+  const [selectedChars, setSelectedChars] = useState([" ", " ", " "]);
 
-  const arrayCopy = [...selectedChars];
-// function to use when character clicked
-function handleSelectCharacter(char){
-  const arrayCopy = [...selectedChars];
-  //Checks to see if selected character is already in the array if so do nothing
-  //else add character to the array, reaching 3 characters update teammember state with the names
-  //when reaching 3 character additional clicks will remove 0 index char and add latest click as
-  //at index 2
-  if (arrayCopy.includes(char.charID)) {
-    const index = arrayCopy.findIndex((num) => num === char.charID);
-    if (index !== -1) arrayCopy.splice(index, 1);
-  } else {
-    if (arrayCopy.length === 3) {
-      arrayCopy.shift();
-      setSelectedChars(arrayCopy);
-      setTeamMembers(
-        selectedChars[0] + " " + selectedChars[1] + " " + selectedChars[2] + " "
-      );
-    }
-    arrayCopy.push(char.charName);
+  //OnClick function for backgrounds removes Naruto text from the img src
+  function handleBgSelection(bg) {
+    setTeamBg(bg);
   }
-}
+
+  function isBgSelected(bg){
+    if (bg.src === teamBg) {
+      return "bgSample selected " + bg.src;
+    }
+    else{
+      return "bgSample " ;
+    }
+  
+  }
+  const arrayCopy = [...selectedChars];
+  // function to use when character clicked
+  function handleSelectCharacter(char) {
+    const arrayCopy = [...selectedChars];
+    //Checks to see if selected character is already in the array if so do nothing
+    //else add character to the array, reaching 3 characters update teammember state with the names
+    //when reaching 3 character additional clicks will remove 0 index char and add latest click as
+    //at index 2
+    if (arrayCopy.includes(char.charID)) {
+      const index = arrayCopy.findIndex((num) => num === char.charID);
+      if (index !== -1) arrayCopy.splice(index, 1);
+    } else {
+      if (arrayCopy.length === 3) {
+        arrayCopy.shift();
+        setSelectedChars(arrayCopy);
+      }
+      arrayCopy.push(char.charName);
+    }
+    setTeamMembers(arrayCopy);
+  }
 
   function highlightChar(i) {
-      if (selectedChars.includes(i)) {
-        return "selected";
-      } else {
-        return "charImage";
-      } 
+    if (selectedChars.includes(i)) {
+      return "selected";
+    } else {
+      return "charImage";
+    }
   }
 
   //   const toggleClass = (name, id) => {
@@ -977,9 +1015,7 @@ function handleSelectCharacter(char){
   // }, []);
 
   //Set intial team members
-  const [teamMembers, setTeamMembers] = useState([
-    
-  ]);
+  const [teamMembers, setTeamMembers] = useState([]);
   const [teamName, setTeamName] = useState("Streak");
   const [numOfTeams, setNumOfTeams] = useState(teams.length);
   const [teamNumber, setTeamNumber] = useState(teams.length);
@@ -997,11 +1033,11 @@ function handleSelectCharacter(char){
       Name: teamName,
       Background: teamBg,
       memberID: [1, 2, 3],
-      Members: teamMembers.split(" ", teamMembers.length),
+      Members: teamMembers,
       imgSrc: [
-        require("./" + "char_images/" + teamMembers.split(" ", 1)[0] + ".jpg"),
-        require("./" + "char_images/" + teamMembers.split(" ", 2)[1] + ".jpg"),
-        require("./" + "char_images/" + teamMembers.split(" ", 3)[2] + ".jpg"),
+        require("./" + "char_images/" + teamMembers[0] + ".png"),
+        require("./" + "char_images/" + teamMembers[1] + ".png"),
+        require("./" + "char_images/" + teamMembers[2] + ".png"),
       ],
     };
     //Adds newly created team into the teams array.
@@ -1043,9 +1079,9 @@ function handleSelectCharacter(char){
     // console.log("Team number", teamNumber);
     // console.log("Img src ", teamNumber);
     window.localStorage.setItem("Your_Teams", JSON.stringify(teams));
-  }, [teams, setTeams, selectChar, selectedChars]);
+  }, [teams, setTeams, selectChar]);
   // componentDidMount();
-//console.log("Selected Chars " + selectedChars);
+  //console.log("Selected Chars " + selectedChars);
   return (
     <div className="App">
       <div className="charImageHolder">
@@ -1059,7 +1095,7 @@ function handleSelectCharacter(char){
               className={highlightChar(charPic.charName)}
               id={charPic.charID}
               alt={charPic.charName}
-              src={require("./char_images/" + charPic.charName + ".jpg")}
+              src={require("./char_images/" + charPic.charName + ".png")}
               //For some reason this onClick only highlights with  charID not charName
               onClick={() => handleSelectCharacter(charPic)}
               //onClick={() => toggleClass(charPic.charName, charPic.charID)}
@@ -1109,7 +1145,7 @@ function handleSelectCharacter(char){
                 return (
                   <div
                     key={bg.src + "key"}
-                    className={bg.src + " bgSample"}
+                    className={isBgSelected(bg) + " " + bg.src}
                     onClick={() => handleBgSelection(bg.src)}
                   />
                 );
@@ -1144,7 +1180,7 @@ function handleSelectCharacter(char){
                     src={team.imgSrc[2]}
                     alt={team.Members[2]}
                   />
-                  <button className="btn" onClick={() => removeTeam(team.ID)}>
+                  <button className="btn remove" onClick={() => removeTeam(team.ID)}>
                     Remove
                   </button>
                 </div>
