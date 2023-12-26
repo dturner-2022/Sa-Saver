@@ -12,6 +12,7 @@
   text-align: center;
   display: flex;
 }
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -319,13 +320,15 @@ input[type="radio"] {
   opacity: 1;
 }
 .teamsSettingsHolder {
-  min-width: 35%;
-  height: 870px;
+  height: auto;
   color: yellow;
-  overflow-y: scroll;
   background-color: rgba(38, 6, 58, 0.4);
   margin: 2px;
   padding: 2px;
+}
+.bgsHolder{
+   height: 700px;
+    overflow-y: scroll;
 }
 .teamInfo {
   font-weight: bolder;
@@ -372,7 +375,7 @@ input {
   align-content: center;
 }
 .charImageHolder {
-  min-width: 350px;
+ 
   width: auto;
 }
 .charImage {
@@ -395,7 +398,7 @@ input {
   text-align: center;
   font-weight: bold;
   transition: 0.5s;
-  min-width: 210px;
+  width: 280px;
 }
 .teamBox img {
   width: 60px;
@@ -447,10 +450,20 @@ input[type="radio"] {
 }
 .remove:hover {
   cursor: pointer;
+  background-color: yellow;
+  color: black;
+  animation: 0.4s ani-shake ease-in-out alternate infinite;
+}
+
+.delete {
+  transition: 0.2s;
+}
+.delete:hover {
+  cursor: pointer;
   background-color: red;
   color: white;
-  animation: 0.2s ani-shake ease-in-out alternate infinite;
-}
+  animation: 0.1s ani-shake ease-in-out alternate infinite;
+} 
 
 @keyframes ani-shake {
   0% {
@@ -508,7 +521,6 @@ input[type="radio"] {
 }
 .charImageHolder {
   margin: 0 auto;
-  width: 75vw;
 }
 .teamsHolder {
   margin: 0 auto;
@@ -532,10 +544,8 @@ input[type="radio"] {
     display: block;
   }
   .charImageHolder {
-    width: 65vw;
   }
   .teamsHolder {
-    width: 45vw;
   }
 }
 @media (min-width: 1024px) {
@@ -585,3 +595,4 @@ input[type="radio"] {
     flex-direction: row;
   }
 }
+
