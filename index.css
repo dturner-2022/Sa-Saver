@@ -1,8 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .root {
-  margin: 6px 6px;
+  margin: 2px 2px;
 }
 * {
-  margin: 5px 5px;
+  margin: 1px 1px;
 }
 .App {
   text-align: center;
@@ -16,184 +20,327 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-  .important{
-    font-weight: bold;
-    color: yellow;
-    font-size: 17px;
-  }
-.selected{
-  width: 45px;
-  height: 45px;
-  border: solid rgb(240, 111, 25) 3px;
-  background-color: rgba(228, 246, 239, 0.954);}
+.important {
+  font-weight: bold;
+  color: rgb(255, 221, 0);
+  font-size: 15px;
+}
+.selected {
+  width: 63px;
+  height: 63px;
+  border: solid rgb(224, 105, 19) 3px;
+  background-color: rgba(228, 246, 239, 0.954);
+  transition: 0.2s;
+}
+.favored {
+  border: solid green 2px;
+  transition: 0.2s;
+}
 html {
-  background-Image: url("./site_images/Bleach6.jpg") ;
-  background-color: black;
+  background-image: url("./site_images/Bleach34.webp");
+  background-color: rgb(186, 193, 194);
+  background-size: contain;
 }
 .Bleach0 {
-  background-Image: url("./site_images/Bleach0.jpg") ;
+  background-image: url("./site_images/Bleach0.webp");
   background-color: rgb(239, 39, 25);
 }
 .Bleach1 {
-  background-Image: url("./site_images/Bleach1.jpg") ;
+  background-image: url("./site_images/Bleach1.webp");
   background-color: rgb(255, 116, 23);
 }
 .Bleach2 {
-  background-Image: url("./site_images/Bleach2.jpg") ;
+  background-image: url("./site_images/Bleach2.webp");
   background-color: rgb(243, 183, 32);
 }
 .Bleach3 {
-  background-Image: url("./site_images/Bleach3.jpg") ;
+  background-image: url("./site_images/Bleach3.webp");
   background-color: rgb(190, 243, 32);
 }
 .Bleach4 {
-  background-Image: url("./site_images/Bleach4.jpg") ;
+  background-image: url("./site_images/Bleach4.webp");
   background-color: rgb(78, 243, 32);
 }
 .Bleach5 {
-  background-Image: url("./site_images/Bleach5.jpg") ;
+  background-image: url("./site_images/Bleach5.webp");
   background-color: rgb(32, 225, 243);
 }
 .Bleach6 {
-  background-Image: url("./site_images/Bleach6.jpg") ;
+  background-image: url("./site_images/Bleach6.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach7 {
-  background-Image: url("./site_images/Bleach7.jpg") ;
+  background-image: url("./site_images/Bleach7.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach8 {
-  background-Image: url("./site_images/Bleach8.jpg") ;
+  background-image: url("./site_images/Bleach8.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach9 {
-  background-Image: url("./site_images/Bleach9.jpg") ;
+  background-image: url("./site_images/Bleach9.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach10 {
-  background-Image: url("./site_images/Bleach10.jpg") ;
+  background-image: url("./site_images/Bleach10.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach11 {
-  background-Image: url("./site_images/Bleach11.jpg") ;
+  background-image: url("./site_images/Bleach11.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach12 {
-  background-Image: url("./site_images/Bleach12.jpg") ;
+  background-image: url("./site_images/Bleach12.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach13 {
-  background-Image: url("./site_images/Bleach13.jpg") ;
+  background-image: url("./site_images/Bleach13.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach14 {
-  background-Image: url("./site_images/Bleach14.jpg") ;
+  background-image: url("./site_images/Bleach14.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach15 {
-  background-Image: url("./site_images/Bleach15.jpg") ;
+  background-image: url("./site_images/Bleach15.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach16 {
-  background-Image: url("./site_images/Bleach16.jpg") ;
+  background-image: url("./site_images/Bleach16.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach17 {
-  background-Image: url("./site_images/Bleach17.jpg") ;
+  background-image: url("./site_images/Bleach17.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach18 {
-  background-Image: url("./site_images/Bleach18.jpg") ;
+  background-image: url("./site_images/Bleach18.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach19 {
-  background-Image: url("./site_images/Bleach19.jpg") ;
+  background-image: url("./site_images/Bleach19.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach20 {
-  background-Image: url("./site_images/Bleach10.jpg") ;
+  background-image: url("./site_images/Bleach10.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach21 {
-  background-Image: url("./site_images/Bleach21.jpg") ;
+  background-image: url("./site_images/Bleach21.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach22 {
-  background-Image: url("./site_images/Bleach22.jpg") ;
+  background-image: url("./site_images/Bleach22.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach23 {
-  background-Image: url("./site_images/Bleach23.jpg") ;
+  background-image: url("./site_images/Bleach23.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach24 {
-  background-Image: url("./site_images/Bleach24.jpg") ;
+  background-image: url("./site_images/Bleach24.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach25 {
-  background-Image: url("./site_images/Bleach25.jpg") ;
+  background-image: url("./site_images/Bleach25.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach26 {
-  background-Image: url("./site_images/Bleach26.jpg") ;
+  background-image: url("./site_images/Bleach26.webp");
   background-color: rgb(32, 148, 243);
 }
 .Bleach27 {
-  background-Image: url("./site_images/Bleach27.jpg") ;
+  background-image: url("./site_images/Bleach27.webp");
   background-color: rgb(32, 148, 243);
 }
-.Bleachbg{
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
+.Bleach28 {
+  background-image: url("./site_images/Bleach28.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach29 {
+  background-image: url("./site_images/Bleach29.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach30 {
+  background-image: url("./site_images/Bleach30.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach31 {
+  background-image: url("./site_images/Bleach31.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach32 {
+  background-image: url("./site_images/Bleach32.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach33 {
+  background-image: url("./site_images/Bleach33.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach34 {
+  background-image: url("./site_images/Bleach34.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach35 {
+  background-image: url("./site_images/Bleach35.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach36 {
+  background-image: url("./site_images/Bleach36.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach37 {
+  background-image: url("./site_images/Bleach37.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach38 {
+  background-image: url("./site_images/Bleach38.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach39 {
+  background-image: url("./site_images/Bleach39.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach40 {
+  background-image: url("./site_images/Bleach40.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach41 {
+  background-image: url("./site_images/Bleach41.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach42 {
+  background-image: url("./site_images/Bleach42.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach43 {
+  background-image: url("./site_images/Bleach43.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach44 {
+  background-image: url("./site_images/Bleach44.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach45 {
+  background-image: url("./site_images/Bleach45.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach46 {
+  background-image: url("./site_images/Bleach46.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach47 {
+  background-image: url("./site_images/Bleach47.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach48 {
+  background-image: url("./site_images/Bleach48.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach49 {
+  background-image: url("./site_images/Bleach49.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach50 {
+  background-image: url("./site_images/Bleach50.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleach51 {
+  background-image: url("./site_images/Bleach51.webp");
+  background-color: rgb(32, 148, 243);
+}
+.Bleachbg {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Bleachbg {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.bgSample{
-    display: inline-block;
-    width: 160px;
-    height: 60px;
-    font-size: 12px;
-    font-weight: bolder;
-    color: black;
-    margin: 1px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+.bgSample {
+  display: inline-block;
+  width: 90px;
+  height: 40px;
+  font-size: 11px;
+  font-weight: bolder;
+  color: black;
+  margin: 1px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: 0.7s;
 }
-.bgSamplep{
+.bgSample:hover {
+  transform: scale(2.1);
+  cursor: pointer;
+  opacity: 1;
+}
+input[type="radio"] {
+  display: none;
+}
+
+.highRated {
+  border: double 1px gold;
+  transition: 0.2s;
+ }
+.highRated:hover {
+
+  animation: 1.2s spin ease-in-out alternate infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotatey(0deg);
+  }
+  30% {
+    transform: rotatey(90deg);
+    transform: scale(1.3);
+  }
+  60% {
+
+    transform: rotatey(180deg);
+  }
+  100% {
+    transform: rotatey(360deg);
+    transform: scale(1.3);
+  }
+}
+
+.bgSamplep {
   width: 20%;
-  background-color: white;
-  margin-left: 16px;
-  margin-bottom: -16px;
+  background-color: red;
+  margin-left: 12px;
+  margin-bottom: -12px;
 }
-.teamSettings{
+.teamSettings {
   /*border: solid 2px red; */
+  opacity: 1;
 }
-.teamsSettingsHolder{
-  width: 65%;
-  font-weight: bolder;
-  background-color: rgb(12, 98, 190);
-  margin: 2px;
-  padding: 2px;
-
-}
-.teamInfo{
-  font-weight: bolder;
-  background-color: rgb(0, 0, 0);
-  opacity: .7;
+.teamsSettingsHolder {
+  min-width: 35%;
+  height: 870px;
+  color: yellow;
+  overflow-y: scroll;
+  background-color: rgba(38, 6, 58, 0.4);
   margin: 2px;
   padding: 2px;
 }
-.mainTeamHolder{
-  width: 100%;
+.teamInfo {
   font-weight: bolder;
-  background-color: rgb(12, 98, 190);
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
   margin: 2px;
   padding: 2px;
-
 }
-.charTeamOutput{
-  color: red; 
+.mainTeamHolder {
+  font-weight: bolder;
+  margin: 2px;
+  padding: 2px;
+}
+.charTeamOutput {
+  color: red;
   text-decoration: underline;
 }
 code {
@@ -212,43 +359,49 @@ input {
   height: auto;
 }
 .nameCreate {
- /*border: black solid 2px;*/
+  /*border: black solid 2px;*/
   height: auto;
 }
 .teamsHolder {
   display: flex;
   color: white;
-  background-color: rgba(78, 171, 253, 0.954);
   height: auto;
   margin: 5px;
   padding: 5px;
- *border: solid 2px green;
+  //border: solid 2px green;
   align-content: center;
 }
 .charImageHolder {
   min-width: 350px;
   width: auto;
-  background-color: rgba(0, 80, 145, 0.954);
 }
-.charImage{
-  width: 45px;
-  height: 45px;
-  border: solid black 2px;
-  background-color: rgba(0, 107, 64, 0.954);
+.charImage {
+  width: 65px;
+  height: 65px;
+  border: solid rgb(1, 1, 1) 2px;
+  background-color: rgba(0, 107, 61, 0.9);
+  transition: 0.2s;
+}
+.charImage:hover {
+  cursor: pointer;
+  transform: scale(1.5);
 }
 .teamBox {
-  background-color: rgba(163, 212, 255, 0.954);
+  background-color: rgba(163, 255, 186, 0.9);
   margin: 5px;
   color: white;
   display: block;
   justify-content: center;
   text-align: center;
   font-weight: bold;
+  transition: 0.5s;
+  min-width: 210px;
 }
 .teamBox img {
-    width: 60px;
-    height: 60px;
-    border: double 3px #e7fc36;
+  width: 60px;
+  height: 60px;
+  border: double 3px #fcd436;
+  transition: 2s;
 }
 .teamMember {
   background-color: rgb(255, 255, 255);
@@ -258,11 +411,65 @@ input {
   height: 50px;
   border: solid 2px black;
 }
+input[type="radio"] {
+  display: none;
+}
 
+.starHolder {
+}
+
+
+
+.hide {
+  opacity: 0.5;
+}
+.teamBox img:hover {
+  animation: .6s ani-nav ease-in-out alternate;
+  border: rgb(0, 0, 0) solid 3px;
+}
+
+@keyframes ani-nav {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(50deg);
+  }
+  60% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(-380deg);
+  }
+}
+.remove {
+  transition: 0.2s;
+}
+.remove:hover {
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  animation: 0.2s ani-shake ease-in-out alternate infinite;
+}
+
+@keyframes ani-shake {
+  0% {
+    transform: translateX(2px);
+  }
+  30% {
+    transform: translateY(-2px);
+  }
+  60% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateX(-2px);
+  }
+}
 .modal {
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
- /*border-radius: 6px;*/
-  background-color: rgb(255, 107, 107);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  /*border-radius: 6px;*/
+  background-color: rgb(107, 193, 255);
   padding: 1rem;
   text-align: center;
   width: 30rem;
@@ -275,7 +482,7 @@ input {
 .backDrop {
   position: fixed;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: 100vh;
   top: 0;
@@ -285,30 +492,32 @@ input {
   width: auto;
   height: auto;
 }
-.charImage{
-  margin: 5px;
+.charImage {
+   margin: 3px;
+  transition: all .2s;
+}
+.fade {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 500ms;
 }
 .wrapper {
   margin: 0 auto;
   display: block;
   width: 570px;
 }
-  .charImageHolder {
-    margin: 0 auto;
-    width: 70vw;
-  }
-  .teamsHolder {
-    margin: 0 auto;
-    width: 30vw;
-  }
+.charImageHolder {
+  margin: 0 auto;
+  width: 75vw;
+}
+.teamsHolder {
+  margin: 0 auto;
+}
 .nameCreate {
   flex-direction: column;
   display: flex;
 }
 .teamBox {
-  width: 350px;
-  margin: 0 auto;
-  flex-direction: column;
 }
 
 @media (min-width: 640px) {
@@ -322,11 +531,11 @@ input {
   .nameCreate {
     display: block;
   }
-    .charImageHolder {
-    width: 90vw;
+  .charImageHolder {
+    width: 65vw;
   }
   .teamsHolder {
-    width: 60vw;
+    width: 45vw;
   }
 }
 @media (min-width: 1024px) {
@@ -334,7 +543,7 @@ input {
     background-color: rgb(170, 255, 0);
   } */
   .charImageHolder img {
-    margin: 5px;
+    margin: 3px;
   }
   .wrapper {
     width: auto;
@@ -349,14 +558,14 @@ input {
     width: auto;
   }
   .teamBox {
-  margin: 0 auto;
+    margin: 0 auto;
   }
 }
 @media (min-width: 1280px) {
   /* *{
     background-color: rgb(0, 110, 13);
   } */
-  .charImageHolder{
+  .charImageHolder {
     margin: 3px;
   }
   .wrapper {
