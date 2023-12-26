@@ -1,7 +1,9 @@
-// import React, { Component, createElement } from "react";
-import { useState, useEffect, useRef } from "react";
-
+import React  from "react";
+import { useState, useEffect } from "react";
+ import { LiaStarSolid } from "react-icons/lia";
+ 
 const App = () => {
+
   //Database crequest to grab images but fails err blocked by CORS no access control allow
   // function componentDidMount() {
   //   fetch("https://sainfo.me/display.php")
@@ -23,14 +25,12 @@ const App = () => {
   //   xl: "1280px",
   //   "2xl": "1536px",
   // };
-  let newArr = [];
-  let newArr2 = [];
+ 
   //Bgs for teams
   const [teamBg, setTeamBg] = useState("Bleach20");
 
   //Idea for allocating Bleach bg images into an array
-  const [bleachBgs, setBleachBg] = useState({
-    imgs: [
+  const bleachBgs  =  [
       {
         src: "Bleach0",
       },
@@ -127,12 +127,68 @@ const App = () => {
       {
         src: "Bleach31",
       },
-    ],
-  });
+      {
+        src: "Bleach32",
+      },
+      {
+        src: "Bleach33",
+      },
+      {
+        src: "Bleach34",
+      },
+      {
+        src: "Bleach35",
+      },
+      {
+        src: "Bleach36",
+      },
+      {
+        src: "Bleach37",
+      },
+      {
+        src: "Bleach38",
+      },
+      {
+        src: "Bleach39",
+      },
+      {
+        src: "Bleach40",
+      },
+      {
+        src: "Bleach41",
+      },
+      {
+        src: "Bleach42",
+      },
+      {
+        src: "Bleach43",
+      },
+      {
+        src: "Bleach44",
+      },
+      {
+        src: "Bleach46",
+      },
+      {
+        src: "Bleach47",
+      },
+      {
+        src: "Bleach48",
+      },
+      {
+        src: "Bleach49",
+      },
+      {
+        src: "Bleach50",
+      },
+      {
+        src: "Bleach51",
+      } 
+    ] 
 
   //Idea for allocating character images into an array
-  const [charImages, selectChar] = useState({
-    selectedChar: [],
+     
+  const  charImages = {
     chars: [
       {
         charName: "Kurosaki-Ichigo",
@@ -910,16 +966,44 @@ const App = () => {
         charName: "Ben-10",
         charID: 193,
       },
-    ],
-  });
+      {
+        charName: "Ying-Yang",
+        charID: 194,
+      },
+      {
+        charName: "Jackie-Tristian",
+        charID: 195,
+      },
+      {
+        charName: "Giriko-Kutzusawa",
+        charID: 196,
+      },
+      {
+        charName: "Fullbringer-Ichigo-lvl-2",
+        charID: 197,
+      },
+      {
+        charName: "Fullbringer-Ichigo-lvl-3",
+        charID: 198,
+      },
+      {
+        charName: "Traitor-Ginjo",
+        charID: 199,
+      },
+      {
+        charName: "Byakuya-(TLA)",
+        charID: 200,
+      },
+    ] 
+  } 
   //Spring method to fade in the entire app over .5 seconds on lunach
 
   //Test function for the character images being clicked to alert the img info
   //Stores teams data as objects into the local storage if present if not sets to empty array
   const data = JSON.parse(window.localStorage.getItem("Your_Teams") || "[]");
+  const teamCount =  (window.localStorage.getItem("Teams_Created") || 0);
 
-  let i = useRef(0);
-
+ 
   const [selectedChars, setSelectedChars] = useState([" ", " ", " "]);
 
   //OnClick function for backgrounds removes Bleach text from the img src
@@ -934,8 +1018,7 @@ const App = () => {
       return "bgSample ";
     }
   }
-  const arrayCopy = [...selectedChars];
-  // function to use when character clicked
+   // function to use when character clicked
   function handleSelectCharacter(char) {
     const arrayCopy = [...selectedChars];
     //Checks to see if selected character is already in the array if so do nothing
@@ -1016,7 +1099,8 @@ const App = () => {
   const [teamMembers, setTeamMembers] = useState([]);
   const [teamName, setTeamName] = useState("Streak");
   const [numOfTeams, setNumOfTeams] = useState(teams.length);
-  const [teamNumber, setTeamNumber] = useState(teams.length);
+  const [teamNumber, setTeamNumber] = useState(teamCount);
+  const [teamStars, setTeamStars] = useState(4);
 
   function addTeam() {
     //If no team name is given the button does nothing
@@ -1027,15 +1111,17 @@ const App = () => {
     //Adding new teams information and setting it to the proper keys then adding
     //team content into the main div to be displayed
     const newTeam = {
-      ID: teamNumber,
+      ID: teamMembers + " " + teamName,
+      TeamNumber: teamNumber,
       Name: teamName,
       Background: teamBg,
       memberID: [1, 2, 3],
-      Members: teamMembers,
+      Members: teamMembers,      
+      starNum: teamStars,
       imgSrc: [
-        require("./" + "char_images/" + teamMembers[0] + ".webp"),
-        require("./" + "char_images/" + teamMembers[1] + ".webp"),
-        require("./" + "char_images/" + teamMembers[2] + ".webp"),
+        require("./char_images/" + teamMembers[0] + ".webp"),
+        require("./char_images/" + teamMembers[1] + ".webp"),
+        require("./char_images/" + teamMembers[2] + ".webp"),
       ],
     };
     //Adds newly created team into the teams array.
@@ -1047,9 +1133,38 @@ const App = () => {
     setNumOfTeams(numOfTeams + 1);
     setTeamName(teamName);
     setTeamBg(teamBg);
-    setTeamNumber(teamName.concat(teamNumber));
+    setTeamNumber(teamNumber  + 1) ;
     setTeamName("Team" + numOfTeams);
+    setTeamStars(teamStars);
   }
+
+const StarRating = (props) => {
+   const [hover, setHover] = useState(null);
+  return (
+    <div className="starHolder">
+       {[...Array(10)].map((star, index) => {
+        const ratingValue = index + 1;
+
+        return (
+          <label key={index }>
+            <input
+              type="radio"
+              name="rating"
+              value={ratingValue}
+              onClick={() => setTeamRating(props.team,ratingValue)}
+            />
+            <LiaStarSolid
+              color={ratingValue <= (hover || props.stars) ? "yellow" : " "}
+              onMouseEnter={() => setHover(ratingValue)}
+              onMouseLeave={() => setHover(null)}
+              className={props.stars > 6 ? "highRated" : " " } 
+            />
+          </label>
+        );
+      })}
+    </div>
+  );
+};
 
   function removeTeam(id) {
     //Remove button logic looks for id that matches the clicked removed id and
@@ -1065,19 +1180,30 @@ const App = () => {
     setTeams(newTeams);
   }
 
+   function setTeamRating(id,stars) {
+   const target = teams.findIndex((team) => team.TeamNumber === id);
+   teams[target].starNum = stars;
+  setTeamStars(stars);
+ }
+
+    function deleteAll() {
+       localStorage.clear();
+       setTeams([]);
+       teamCount= 0;      
+    }
+
   //Update number of teams when a team is added or removed.
   //Output just for testing purposes.
   useEffect(() => {
-    setNumOfTeams(teams.length);
-    setTeamName(teamName);
-    setTeamNumber(teamNumber);
+    setTeamStars(teamStars);
     // console.log("Number of teams", numOfTeams);
     // console.log("Team Name", teamName);
     // console.log("Team members", teamMembers);
     // console.log("Team number", teamNumber);
     // console.log("Img src ", teamNumber);
     window.localStorage.setItem("Your_Teams", JSON.stringify(teams));
-  }, [teams, setTeams, selectChar]);
+    window.localStorage.setItem("Teams_Created", JSON.stringify(teamNumber));
+  }, [teams, teamNumber, teamStars, setTeamStars , setTeamRating]);
   // componentDidMount();
   //console.log("Selected Chars " + selectedChars);
   return (
@@ -1112,14 +1238,14 @@ const App = () => {
         <div className="teamSettings">
           <div className="nameCreate">
             <input
-              lable="Team Name"
+              label="Team Name"
               type="text"
               placeholder="Enter team name..."
               value={teamName}
               onChange={(e) => setTeamName(e.target.value)}
             />
             <input
-              lable="Team Members"
+              label="Team Members"
               type="text"
               placeholder="Enter 3 names or click 3 characters..."
               value={teamMembers}
@@ -1131,19 +1257,27 @@ const App = () => {
             <button className="btn" onClick={() => addTeam()}>
               Add Team
             </button>
+ 
+
+            <button className="btn remove" onClick={() => deleteAll()}>
+              !DELETE ALL!
+            </button>
+
             <p className="important">
-              Select 3 characters, a background and then "Add Team". Team name
-              required.
+              Select 3 characters, a background and "Add Team". Name required.
             </p>
             <p className="important">
-              <span className="important">You have {numOfTeams} team(s)!</span>
+              <span className="important">
+                You have {numOfTeams} team(s)!
+              </span>
             </p>
-            <div>
+            <div className="bgsHolder">
               {" "}
-              {bleachBgs.imgs.map((bg) => {
+              {bleachBgs.map((bg) => {
                 return (
                   <div
                     key={bg.src + "key"}
+                    draggable="true"
                     className={isBgSelected(bg) + " " + bg.src}
                     loading="lazy"
                     onClick={() => handleBgSelection(bg.src)}
@@ -1162,6 +1296,7 @@ const App = () => {
                 <div className={"teamBox Bleachbg " + team.Background}>
                   <p className="teamInfo" key={team.ID}>
                     Name: {team.Name} <br />
+                    <StarRating stars={team.starNum} team={team.TeamNumber} />
                     Members: {team.Members + " "}
                   </p>
                   {/* MemberID {team.memberID} */}
@@ -1183,8 +1318,9 @@ const App = () => {
                     src={team.imgSrc[2]}
                     alt={team.Members[2]}
                   />
+
                   <button
-                    className="btn remove"
+                    className="btn delete"
                     onClick={() => removeTeam(team.ID)}
                   >
                     Remove
