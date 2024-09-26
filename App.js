@@ -1,1009 +1,1040 @@
-import React  from "react";
+import React from "react";
 import { useState, useEffect } from "react";
- import { LiaStarSolid } from "react-icons/lia";
- 
-const App = () => {
+import { GiStarShuriken } from "react-icons/gi";
 
-  //Database crequest to grab images but fails err blocked by CORS no access control allow
-  // function componentDidMount() {
-  //   fetch("https://sainfo.me/display.php")
-  //     .then((response) => {
-  //       console.log(response);
-  //       return response.json();
-  //     })
-  //     .then((result) => {
-  //       console.log(result);
-  //     })
-  //     .catch((err) => {
-  //       console.log("Error Reading data Google harder you cow" + err);
-  //     });
-  // }
-  // const sizes = {
-  //   sm: "640px",
-  //   md: "768px",
-  //   lg: "1024px",
-  //   xl: "1280px",
-  //   "2xl": "1536px",
-  // };
- 
-  //Bgs for teams
-  const [teamBg, setTeamBg] = useState("Bleach20");
+const App = () =>  {
+  //Bgs  for teams
+  const [teamBg, setTeamBg] = useState("bleach20");
 
-  //Idea for allocating Bleach bg images into an array
-  const bleachBgs  =  [
-      {
-        src: "Bleach0",
-      },
-      {
-        src: "Bleach1",
-      },
-      {
-        src: "Bleach2",
-      },
-      {
-        src: "Bleach3",
-      },
-      {
-        src: "Bleach4",
-      },
-      {
-        src: "Bleach5",
-      },
-      {
-        src: "Bleach6",
-      },
-      {
-        src: "Bleach7",
-      },
-      {
-        src: "Bleach8",
-      },
-      {
-        src: "Bleach9",
-      },
-      {
-        src: "Bleach10",
-      },
-      {
-        src: "Bleach11",
-      },
-      {
-        src: "Bleach12",
-      },
-      {
-        src: "Bleach13",
-      },
-      {
-        src: "Bleach14",
-      },
-      {
-        src: "Bleach15",
-      },
-      {
-        src: "Bleach16",
-      },
-      {
-        src: "Bleach17",
-      },
-      {
-        src: "Bleach18",
-      },
-      {
-        src: "Bleach19",
-      },
-      {
-        src: "Bleach20",
-      },
-      {
-        src: "Bleach21",
-      },
-      {
-        src: "Bleach22",
-      },
-      {
-        src: "Bleach23",
-      },
-      {
-        src: "Bleach24",
-      },
-      {
-        src: "Bleach25",
-      },
-      {
-        src: "Bleach26",
-      },
-      {
-        src: "Bleach27",
-      },
-      {
-        src: "Bleach28",
-      },
-      {
-        src: "Bleach29",
-      },
-      {
-        src: "Bleach30",
-      },
-      {
-        src: "Bleach31",
-      },
-      {
-        src: "Bleach32",
-      },
-      {
-        src: "Bleach33",
-      },
-      {
-        src: "Bleach34",
-      },
-      {
-        src: "Bleach35",
-      },
-      {
-        src: "Bleach36",
-      },
-      {
-        src: "Bleach37",
-      },
-      {
-        src: "Bleach38",
-      },
-      {
-        src: "Bleach39",
-      },
-      {
-        src: "Bleach40",
-      },
-      {
-        src: "Bleach41",
-      },
-      {
-        src: "Bleach42",
-      },
-      {
-        src: "Bleach43",
-      },
-      {
-        src: "Bleach44",
-      },
-      {
-        src: "Bleach46",
-      },
-      {
-        src: "Bleach47",
-      },
-      {
-        src: "Bleach48",
-      },
-      {
-        src: "Bleach49",
-      },
-      {
-        src: "Bleach50",
-      },
-      {
-        src: "Bleach51",
-      } 
-    ] 
+  //Idea for allocating bleach bg images into an array
+  const bleachBgs = [
+    {
+      src: "Bleach0",
+    },
+    {
+      src: "Bleach1",
+    },
+    {
+      src: "Bleach2",
+    },
+    {
+      src: "Bleach3",
+    },
+    {
+      src: "Bleach4",
+    },
+    {
+      src: "Bleach5",
+    },
+    {
+      src: "Bleach6",
+    },
+    {
+      src: "Bleach7",
+    },
+    {
+      src: "Bleach8",
+    },
+    {
+      src: "Bleach9",
+    },
+    {
+      src: "Bleach10",
+    },
+    {
+      src: "Bleach11",
+    },
+    {
+      src: "Bleach12",
+    },
+    {
+      src: "Bleach13",
+    },
+    {
+      src: "Bleach14",
+    },
+    {
+      src: "Bleach15",
+    },
+    {
+      src: "Bleach16",
+    },
+    {
+      src: "Bleach17",
+    },
+    {
+      src: "Bleach18",
+    },
+    {
+      src: "Bleach19",
+    },
+    {
+      src: "Bleach20",
+    },
+    {
+      src: "Bleach21",
+    },
+    {
+      src: "Bleach22",
+    },
+    {
+      src: "Bleach23",
+    },
+    {
+      src: "Bleach24",
+    },
+    {
+      src: "Bleach25",
+    },
+    {
+      src: "Bleach26",
+    },
+    {
+      src: "Bleach27",
+    },
+    {
+      src: "Bleach28",
+    },
+    {
+      src: "Bleach29",
+    },
+    {
+      src: "Bleach30",
+    },
+    {
+      src: "Bleach31",
+    },
+    {
+      src: "Bleach32",
+    },
+    {
+      src: "Bleach33",
+    },
+    {
+      src: "Bleach34",
+    },
+    {
+      src: "Bleach35",
+    },
+    {
+      src: "Bleach36",
+    },
+    {
+      src: "Bleach37",
+    },
+    {
+      src: "Bleach38",
+    },
+    {
+      src: "Bleach39",
+    },
+    {
+      src: "Bleach40",
+    },
+    {
+      src: "Bleach41",
+    },
+    {
+      src: "Bleach42",
+    },
+    {
+      src: "Bleach43",
+    },
+    {
+      src: "Bleach44",
+    },
+    {
+      src: "Bleach46",
+    },
+    {
+      src: "Bleach47",
+    },
+    {
+      src: "Bleach48",
+    },
+    {
+      src: "Bleach49",
+    },
+    {
+      src: "Bleach50",
+    },
+    {
+      src: "Bleach51",
+    },
+    {
+      src: "Bleach52",
+    },
+    {
+      src: "Bleach53",
+    },
+    {
+      src: "Bleach54",
+    },
+    {
+      src: "Bleach55",
+    },
+    {
+      src: "Bleach56",
+    },
+    {
+      src: "Bleach57",
+    },
+    {
+      src: "Bleach59",
+    },    {
+      src: "Bleach60",
+    },    {
+      src: "Bleach61",
+    },    {
+      src: "Bleach62",
+    },    {
+      src: "Bleach63",
+    },    {
+      src: "Bleach64",
+    }, 
+  ];
 
   //Idea for allocating character images into an array
-     
-  const  charImages = {
-    chars: [
-      {
-        charName: "Kurosaki-Ichigo",
-        charID: 0,
-      },
-      {
-        charName: "Kuchiki-Rukia",
-        charID: 1,
-      },
-      {
-        charName: "Inoue-Orihime",
-        charID: 2,
-      },
-      {
-        charName: "Arisawa-Tatsuki",
-        charID: 3,
-      },
-      {
-        charName: "Yasutora-Sado",
-        charID: 4,
-      },
-      {
-        charName: "Kurosaki-Yuzu",
-        charID: 5,
-      },
-      {
-        charName: "Kurosaki-Karin",
-        charID: 6,
-      },
-      {
-        charName: "Kon",
-        charID: 7,
-      },
-      {
-        charName: "Don-Kanonji",
-        charID: 8,
-      },
-      {
-        charName: "Ishida-Uryuu",
-        charID: 9,
-      },
-      {
-        charName: "Hinakari-Jinta",
-        charID: 10,
-      },
-      {
-        charName: "Tsumugiya-Ururu",
-        charID: 11,
-      },
-      {
-        charName: "Tsukabishi-Tessai",
-        charID: 12,
-      },
-      {
-        charName: "Menos-Grande",
-        charID: 13,
-      },
-      {
-        charName: "Shrieker",
-        charID: 14,
-      },
-      {
-        charName: "Numb-Chandelier",
-        charID: 15,
-      },
-      {
-        charName: "Grand-Fisher",
-        charID: 16,
-      },
-      {
-        charName: "Metastacia",
-        charID: 17,
-      },
-      {
-        charName: "Runuganga",
-        charID: 18,
-      },
-      {
-        charName: "Hooleer",
-        charID: 19,
-      },
-      {
-        charName: "Shiba-Ganju",
-        charID: 20,
-      },
-      {
-        charName: "Shiba-Kuukaku",
-        charID: 21,
-      },
-      {
-        charName: "Ikkanzaka-Jidanbou",
-        charID: 22,
-      },
-      {
-        charName: "Ikkanzaka-Jiroubou",
-        charID: 23,
-      },
-      {
-        charName: "Kotetsu-Kiyone",
-        charID: 24,
-      },
-      {
-        charName: "Yamada-Hanatarou",
-        charID: 25,
-      },
-      {
-        charName: "Ayasegawa-Yumichika",
-        charID: 26,
-      },
-      {
-        charName: "Madarame-Ikkaku",
-        charID: 27,
-      },
-      {
-        charName: "Sasakibe-Choujirou",
-        charID: 28,
-      },
-      {
-        charName: "Omaeda-Marechiyo",
-        charID: 29,
-      },
-      {
-        charName: "Kira-Izuru",
-        charID: 30,
-      },
-      {
-        charName: "Kotetsu-Isane",
-        charID: 31,
-      },
-      {
-        charName: "Hinamori-Momo",
-        charID: 32,
-      },
-      {
-        charName: "Abarai-Renji",
-        charID: 33,
-      },
-      {
-        charName: "Iba-Tetsuzaemon",
-        charID: 34,
-      },
-      {
-        charName: "Ise-Nanao",
-        charID: 35,
-      },
-      {
-        charName: "Hisagi-Shuhei",
-        charID: 36,
-      },
-      {
-        charName: "Matsumoto-Rangiku",
-        charID: 37,
-      },
-      {
-        charName: "Kurotsuchi-Nemu",
-        charID: 38,
-      },
-      {
-        charName: "Shiba-Kaien",
-        charID: 39,
-      },
-      {
-        charName: "Yamamoto-Genryuusai",
-        charID: 40,
-      },
-      {
-        charName: "Soifon",
-        charID: 41,
-      },
-      {
-        charName: "Ichimaru-Gin",
-        charID: 42,
-      },
-      {
-        charName: "Unohana-Retsu",
-        charID: 43,
-      },
-      {
-        charName: "Aizen-Sousuke",
-        charID: 44,
-      },
-      {
-        charName: "Kuchiki-Byakuya",
-        charID: 45,
-      },
-      {
-        charName: "Komamura-Sajin",
-        charID: 46,
-      },
-      {
-        charName: "Kyouraku-Shunsui",
-        charID: 47,
-      },
-      {
-        charName: "Tousen-Kaname",
-        charID: 48,
-      },
-      {
-        charName: "Hitsugaya-Toushirou",
-        charID: 49,
-      },
-      {
-        charName: "Zaraki-Kenpachi",
-        charID: 50,
-      },
-      {
-        charName: "Kurotsuchi-Mayuri",
-        charID: 51,
-      },
-      {
-        charName: "Ukitake-Joushiro",
-        charID: 52,
-      },
-      {
-        charName: "Final-Form-Uryuu",
-        charID: 53,
-      },
-      {
-        charName: "Urahara-Kisuke",
-        charID: 54,
-      },
-      {
-        charName: "Shihouin-Yoruichi",
-        charID: 55,
-      },
-      {
-        charName: "Ishida-Ryuuken",
-        charID: 56,
-      },
-      {
-        charName: "Shikai-Rukia",
-        charID: 57,
-      },
-      {
-        charName: "Demon-Sado",
-        charID: 58,
-      },
-      {
-        charName: "Sparrow-Uryuu",
-        charID: 59,
-      },
-      {
-        charName: "Kidou-Kira",
-        charID: 60,
-      },
-      {
-        charName: "Kidou-Momo",
-        charID: 61,
-      },
-      {
-        charName: "Hueco-Mundo-Byakuya",
-        charID: 62,
-      },
-      {
-        charName: "Bankai-Ichigo",
-        charID: 63,
-      },
-      {
-        charName: "Bankai-Ikkaku",
-        charID: 64,
-      },
-      {
-        charName: "Bankai-Renji",
-        charID: 65,
-      },
-      {
-        charName: "Bankai-Soifon",
-        charID: 66,
-      },
-      {
-        charName: "Bankai-Gin",
-        charID: 67,
-      },
-      {
-        charName: "Bankai-Byakuya",
-        charID: 68,
-      },
-      {
-        charName: "Bankai-Komamura",
-        charID: 69,
-      },
-      {
-        charName: "Bankai-Hitsugaya",
-        charID: 70,
-      },
-      {
-        charName: "Bankai-Mayuri",
-        charID: 71,
-      },
-      {
-        charName: "Armored-Yoruichi",
-        charID: 72,
-      },
-      {
-        charName: "Kidou-Urahara",
-        charID: 73,
-      },
-      {
-        charName: "Kurosaki-Isshin",
-        charID: 74,
-      },
-      {
-        charName: "Yylfordt-Granz",
-        charID: 75,
-      },
-      {
-        charName: "Edrad-Liones",
-        charID: 76,
-      },
-      {
-        charName: "Shawlong-Qufang",
-        charID: 77,
-      },
-      {
-        charName: "Demoura-Zodd",
-        charID: 78,
-      },
-      {
-        charName: "Aisslinger-Wernarr",
-        charID: 79,
-      },
-      {
-        charName: "Menoly-Mallia",
-        charID: 80,
-      },
-      {
-        charName: "Loly-Aivirrne",
-        charID: 81,
-      },
-      {
-        charName: "Tesla-Lindocruz",
-        charID: 82,
-      },
-      {
-        charName: "Dondochakka-Bilstin",
-        charID: 83,
-      },
-      {
-        charName: "Pesche-Guatiche",
-        charID: 84,
-      },
-      {
-        charName: "Sun-Sun",
-        charID: 85,
-      },
-      {
-        charName: "Mila-Rose",
-        charID: 86,
-      },
-      {
-        charName: "Apacci",
-        charID: 87,
-      },
-      {
-        charName: "Dark-Rukia",
-        charID: 88,
-      },
-      {
-        charName: "Senna",
-        charID: 89,
-      },
-      {
-        charName: "Bankai-Unohana",
-        charID: 90,
-      },
-      {
-        charName: "Bankai-Kenpachi",
-        charID: 91,
-      },
-      {
-        charName: "Charlotte-Cuuhlhourne",
-        charID: 92,
-      },
-      {
-        charName: "Avirama-Redder",
-        charID: 93,
-      },
-      {
-        charName: "Findorr-Calius",
-        charID: 94,
-      },
-      {
-        charName: "Ggio-Vega",
-        charID: 95,
-      },
-      {
-        charName: "Lilynette-Gingerbuck",
-        charID: 96,
-      },
-      {
-        charName: "Gantebainne-Mosqueda",
-        charID: 97,
-      },
-      {
-        charName: "Yammy-Riyalgo",
-        charID: 98,
-      },
-      {
-        charName: "Resurreccion-Yammy",
-        charID: 99,
-      },
-      {
-        charName: "Hollow-Ichigo",
-        charID: 100,
-      },
-      {
-        charName: "Cirucci-Sanderwicci",
-        charID: 101,
-      },
-      {
-        charName: "Don-Panini",
-        charID: 102,
-      },
-      {
-        charName: "Ayon",
-        charID: 103,
-      },
-      {
-        charName: "Rudbornn-Chelute",
-        charID: 104,
-      },
-      {
-        charName: "Wonderweiss-Margela",
-        charID: 105,
-      },
-      {
-        charName: "Aaroniero-Arruruerie",
-        charID: 106,
-      },
-      {
-        charName: "Szayel-Aporro-Granz",
-        charID: 107,
-      },
-      {
-        charName: "Zommari-Leroux",
-        charID: 108,
-      },
-      {
-        charName: "Luppi-Antenor",
-        charID: 109,
-      },
-      {
-        charName: "Grimmjow-Jaegerjaquez",
-        charID: 110,
-      },
-      {
-        charName: "Nnoitra-Jiruga",
-        charID: 111,
-      },
-      {
-        charName: "Ulquiorra-Cifer",
-        charID: 112,
-      },
-      {
-        charName: "Tia-Harribel",
-        charID: 113,
-      },
-      {
-        charName: "Barragan-Luisenbarn",
-        charID: 114,
-      },
-      {
-        charName: "Coyote-Starrk",
-        charID: 115,
-      },
-      {
-        charName: "Resurreccion-Szayel",
-        charID: 116,
-      },
-      {
-        charName: "Resurreccion-Grimmjow",
-        charID: 117,
-      },
-      {
-        charName: "Resurreccion-Ulquiorra",
-        charID: 118,
-      },
-      {
-        charName: "Segunda-Ulquiorra",
-        charID: 119,
-      },
-      {
-        charName: "Resurreccion-Harribel",
-        charID: 120,
-      },
-      {
-        charName: "Resurreccion-Barragan",
-        charID: 121,
-      },
-      {
-        charName: "Resurreccion-Starrk",
-        charID: 122,
-      },
-      {
-        charName: "Resurreccion-Wonderweiss",
-        charID: 123,
-      },
-      {
-        charName: "Child-Nel",
-        charID: 124,
-      },
-      {
-        charName: "Nelliel-Tu-Odelschwanck",
-        charID: 125,
-      },
-      {
-        charName: "Hollow-Tousen",
-        charID: 126,
-      },
-      {
-        charName: "Resurreccion-Tousen",
-        charID: 127,
-      },
-      {
-        charName: "Inner-Ichigo",
-        charID: 128,
-      },
-      {
-        charName: "Zangetsu",
-        charID: 129,
-      },
-      {
-        charName: "Pre-Ascension-Aizen",
-        charID: 130,
-      },
-      {
-        charName: "Koutotsu",
-        charID: 131,
-      },
-      {
-        charName: "Vizard-Ichigo",
-        charID: 132,
-      },
-      {
-        charName: "Yadomaru-Lisa",
-        charID: 133,
-      },
-      {
-        charName: "Kuna-Mashiro",
-        charID: 134,
-      },
-      {
-        charName: "Sarugaki-Hiyori",
-        charID: 135,
-      },
-      {
-        charName: "Ushoda-Hachigen",
-        charID: 136,
-      },
-      {
-        charName: "Otoribashi-Rojuro",
-        charID: 137,
-      },
-      {
-        charName: "Aikawa-Love",
-        charID: 138,
-      },
-      {
-        charName: "Muguruma-Kensei",
-        charID: 139,
-      },
-      {
-        charName: "Hirako-Shinji",
-        charID: 140,
-      },
-      {
-        charName: "Suzumebachi",
-        charID: 141,
-      },
-      {
-        charName: "Tenken",
-        charID: 142,
-      },
-      {
-        charName: "Sode-no-Shirayuki",
-        charID: 143,
-      },
-      {
-        charName: "Kazeshini",
-        charID: 144,
-      },
-      {
-        charName: "Ashisogi-Jizo",
-        charID: 145,
-      },
-      {
-        charName: "Gonryomaru",
-        charID: 146,
-      },
-      {
-        charName: "Koga-Kuchiki",
-        charID: 147,
-      },
-      {
-        charName: "Arturo-Plateado",
-        charID: 148,
-      },
-      {
-        charName: "Senbonzakura",
-        charID: 149,
-      },
-      {
-        charName: "Ruri-Iro-Kujaku",
-        charID: 150,
-      },
-      {
-        charName: "Hozukimaru",
-        charID: 151,
-      },
-      {
-        charName: "Haineko",
-        charID: 152,
-      },
-      {
-        charName: "Saru",
-        charID: 153,
-      },
-      {
-        charName: "Hebi",
-        charID: 154,
-      },
-      {
-        charName: "Muramasa",
-        charID: 155,
-      },
-      {
-        charName: "Wabisuke",
-        charID: 156,
-      },
-      {
-        charName: "Tobiume",
-        charID: 157,
-      },
-      {
-        charName: "Sogyo-no-Kotowari",
-        charID: 158,
-      },
-      {
-        charName: "Ryujin-Jakka",
-        charID: 159,
-      },
-      {
-        charName: "Gegetsuburi",
-        charID: 160,
-      },
-      {
-        charName: "Kyokotsu",
-        charID: 161,
-      },
-      {
-        charName: "Katen",
-        charID: 162,
-      },
-      {
-        charName: "Broly",
-        charID: 163,
-      },
-      {
-        charName: "Hyorinmaru",
-        charID: 164,
-      },
-      {
-        charName: "Hisagomaru",
-        charID: 165,
-      },
-      {
-        charName: "Narunosuke",
-        charID: 166,
-      },
-      {
-        charName: "Kyoko-Haida",
-        charID: 167,
-      },
-      {
-        charName: "Kirikaze",
-        charID: 168,
-      },
-      {
-        charName: "Hollow-Muramasa",
-        charID: 169,
-      },
-      {
-        charName: "Sasori-of-the-Red-Sand-(S)",
-        charID: 170,
-      },
-      {
-        charName: "Fullbringer-Orihime",
-        charID: 171,
-      },
-      {
-        charName: "Fullbringer-Sado",
-        charID: 172,
-      },
-      {
-        charName: "Uryuu-(TLA)",
-        charID: 173,
-      },
-      {
-        charName: "Tsukishima",
-        charID: 174,
-      },
-      {
-        charName: "Dangai-Ichigo",
-        charID: 175,
-      },
-      {
-        charName: "Chrysalis-Aizen",
-        charID: 176,
-      },
-      {
-        charName: "Ascended-Aizen",
-        charID: 177,
-      },
-      {
-        charName: "Butterfly-Aizen",
-        charID: 178,
-      },
-      {
-        charName: "Final-Aizen",
-        charID: 179,
-      },
-      {
-        charName: "Hueco-Mundo-Kenpachi",
-        charID: 180,
-      },
-      {
-        charName: "Hakuda-Yamamoto",
-        charID: 181,
-      },
-      {
-        charName: "Yachiru-Kusajishi",
-        charID: 182,
-      },
-      {
-        charName: "Choe-Neng-Poww",
-        charID: 183,
-      },
-      {
-        charName: "Nirgge-Parduoc",
-        charID: 184,
-      },
-      {
-        charName: "Di-Roy-Rinker",
-        charID: 185,
-      },
-      {
-        charName: "Ashido-Kano",
-        charID: 186,
-      },
-      {
-        charName: "Fullbringer-Ichigo-lvl-1",
-        charID: 187,
-      },
-      {
-        charName: "Yukio-Vorarlberna",
-        charID: 188,
-      },
-      {
-        charName: "Ginjo-Kugo",
-        charID: 189,
-      },
-      {
-        charName: "Riruka-Dokugamine",
-        charID: 190,
-      },
-      {
-        charName: "Moe-Shishigawara",
-        charID: 191,
-      },
-      {
-        charName: "Gengar",
-        charID: 192,
-      },
-      {
-        charName: "Ben-10",
-        charID: 193,
-      },
-      {
-        charName: "Ying-Yang",
-        charID: 194,
-      },
-      {
-        charName: "Jackie-Tristian",
-        charID: 195,
-      },
-      {
-        charName: "Giriko-Kutzusawa",
-        charID: 196,
-      },
-      {
-        charName: "Fullbringer-Ichigo-lvl-2",
-        charID: 197,
-      },
-      {
-        charName: "Fullbringer-Ichigo-lvl-3",
-        charID: 198,
-      },
-      {
-        charName: "Traitor-Ginjo",
-        charID: 199,
-      },
-      {
-        charName: "Byakuya-(TLA)",
-        charID: 200,
-      },
-    ] 
-  } 
+  const charImages = [    {
+    "charName": "Kurosaki-Ichigo"
+"charId": 0
+},
+{
+    "charName": "Kuchiki-Rukia",
+    "charId": 1
+},
+{
+    "charName": "Inoue-Orihime",
+    "charId": 2
+},
+{
+    "charName": "Arisawa-Tatsuki",
+    "charId": 3
+},
+{
+    "charName": "Yasutora-Sado",
+    "charId": 4
+},
+{
+    "charName": "Kurosaki-Yuzu",
+    "charId": 5
+},
+{
+    "charName": "Kurosaki-Karin",
+    "charId": 6
+},
+{
+    "charName": "Kon",
+    "charId": 7
+},
+{
+    "charName": "Don-Kanonji",
+    "charId": 8
+},
+{
+    "charName": "Ishida-Uryuu",
+    "charId": 9
+},
+{
+    "charName": "Hinakari-Jinta",
+    "charId": 10
+},
+{
+    "charName": "Tsumugiya-Ururu",
+    "charId": 11
+},
+{
+    "charName": "Tsukabishi-Tessai",
+    "charId": 12
+},
+{
+    "charName": "Menos-Grande",
+    "charId": 13
+},
+{
+    "charName": "Shrieker",
+    "charId": 14
+},
+{
+    "charName": "Numb-Chandelier",
+    "charId": 15
+},
+{
+    "charName": "Grand-Fisher",
+    "charId": 16
+},
+{
+    "charName": "Metastacia",
+    "charId": 17
+},
+{
+    "charName": "Runuganga",
+    "charId": 18
+},
+{
+    "charName": "Hooleer",
+    "charId": 19
+},
+{
+    "charName": "Shiba-Ganju",
+    "charId": 20
+},
+{
+    "charName": "Shiba-Kuukaku",
+    "charId": 21
+},
+{
+    "charName": "Ikkanzaka-Jidanbou",
+    "charId": 22
+},
+{
+    "charName": "Ikkanzaka-Jiroubou",
+    "charId": 23
+},
+{
+    "charName": "Kotetsu-Kiyone",
+    "charId": 24
+},
+{
+    "charName": "Yamada-Hanatarou",
+    "charId": 25
+},
+{
+    "charName": "Ayasegawa-Yumichika",
+    "charId": 26
+},
+{
+    "charName": "Madarame-Ikkaku",
+    "charId": 27
+},
+{
+    "charName": "Sasakibe-Choujirou",
+    "charId": 28
+},
+{
+    "charName": "Omaeda-Marechiyo",
+    "charId": 29
+},
+{
+    "charName": "Kira-Izuru",
+    "charId": 30
+},
+{
+    "charName": "Kotetsu-Isane",
+    "charId": 31
+},
+{
+    "charName": "Hinamori-Momo",
+    "charId": 32
+},
+{
+    "charName": "Abarai-Renji",
+    "charId": 33
+},
+{
+    "charName": "Iba-Tetsuzaemon",
+    "charId": 34
+},
+{
+    "charName": "Ise-Nanao",
+    "charId": 35
+},
+{
+    "charName": "Hisagi-Shuhei",
+    "charId": 36
+},
+{
+    "charName": "Matsumoto-Rangiku",
+    "charId": 37
+},
+{
+    "charName": "Kurotsuchi-Nemu",
+    "charId": 38
+},
+{
+    "charName": "Shiba-Kaien",
+    "charId": 39
+},
+{
+    "charName": "Yamamoto-Genryuusai",
+    "charId": 40
+},
+{
+    "charName": "Soifon",
+    "charId": 41
+},
+{
+    "charName": "Ichimaru-Gin",
+    "charId": 42
+},
+{
+    "charName": "Unohana-Retsu",
+    "charId": 43
+},
+{
+    "charName": "Aizen-Sousuke",
+    "charId": 44
+},
+{
+    "charName": "Kuchiki-Byakuya",
+    "charId": 45
+},
+{
+    "charName": "Komamura-Sajin",
+    "charId": 46
+},
+{
+    "charName": "Kyouraku-Shunsui",
+    "charId": 47
+},
+{
+    "charName": "Tousen-Kaname",
+    "charId": 48
+},
+{
+    "charName": "Hitsugaya-Toushirou",
+    "charId": 49
+},
+{
+    "charName": "Zaraki-Kenpachi",
+    "charId": 50
+},
+{
+    "charName": "Kurotsuchi-Mayuri",
+    "charId": 51
+},
+{
+    "charName": "Ukitake-Joushiro",
+    "charId": 52
+},
+{
+    "charName": "Final-Form Uryuu",
+    "charId": 53
+},
+{
+    "charName": "Urahara-Kisuke",
+    "charId": 54
+},
+{
+    "charName": "Shihouin-Yoruichi",
+    "charId": 55
+},
+{
+    "charName": "Ishida-Ryuuken",
+    "charId": 56
+},
+{
+    "charName": "Shikai-Rukia",
+    "charId": 57
+},
+{
+    "charName": "Demon-Sado",
+    "charId": 58
+},
+{
+    "charName": "Sparrow-Uryuu",
+    "charId": 59
+},
+{
+    "charName": "Kidou-Kira",
+    "charId": 60
+},
+{
+    "charName": "Kidou-Momo",
+    "charId": 61
+},
+{
+    "charName": "Hueco-Mundo Byakuya",
+    "charId": 62
+},
+{
+    "charName": "Bankai-Ichigo",
+    "charId": 63
+},
+{
+    "charName": "Bankai-Ikkaku",
+    "charId": 64
+},
+{
+    "charName": "Bankai-Renji",
+    "charId": 65
+},
+{
+    "charName": "Bankai-Soifon",
+    "charId": 66
+},
+{
+    "charName": "Bankai-Gin",
+    "charId": 67
+},
+{
+    "charName": "Bankai-Byakuya",
+    "charId": 68
+},
+{
+    "charName": "Bankai-Komamura",
+    "charId": 69
+},
+{
+    "charName": "Bankai-Hitsugaya",
+    "charId": 70
+},
+{
+    "charName": "Bankai-Mayuri",
+    "charId": 71
+},
+{
+    "charName": "Armored-Yoruichi",
+    "charId": 72
+},
+{
+    "charName": "Kidou-Urahara",
+    "charId": 73
+},
+{
+    "charName": "Kurosaki-Isshin",
+    "charId": 74
+},
+{
+    "charName": "Yylfordt-Granz",
+    "charId": 75
+},
+{
+    "charName": "Edrad-Liones",
+    "charId": 76
+},
+{
+    "charName": "Shawlong-Qufang",
+    "charId": 77
+},
+{
+    "charName": "Demoura-Zodd",
+    "charId": 78
+},
+{
+    "charName": "Aisslinger-Wernarr",
+    "charId": 79
+},
+{
+    "charName": "Menoly-Mallia",
+    "charId": 80
+},
+{
+    "charName": "Loly-Aivirrne",
+    "charId": 81
+},
+{
+    "charName": "Tesla-Lindocruz",
+    "charId": 82
+},
+{
+    "charName": "Dondochakka-Bilstin",
+    "charId": 83
+},
+{
+    "charName": "Pesche-Guatiche",
+    "charId": 84
+},
+{
+    "charName": "Sun-Sun",
+    "charId": 85
+},
+{
+    "charName": "Mila-Rose",
+    "charId": 86
+},
+{
+    "charName": "Apacci",
+    "charId": 87
+},
+{
+    "charName": "Dark-Rukia",
+    "charId": 88
+},
+{
+    "charName": "Senna",
+    "charId": 89
+},
+{
+    "charName": "Bankai-Unohana",
+    "charId": 90
+},
+{
+    "charName": "Bankai-Kenpachi",
+    "charId": 91
+},
+{
+    "charName": "Charlotte-Cuuhlhourne",
+    "charId": 92
+},
+{
+    "charName": "Avirama-Redder",
+    "charId": 93
+},
+{
+    "charName": "Findorr-Calius",
+    "charId": 94
+},
+{
+    "charName": "Ggio-Vega",
+    "charId": 95
+},
+{
+    "charName": "Lilynette-Gingerbuck",
+    "charId": 96
+},
+{
+    "charName": "Gantebainne-Mosqueda",
+    "charId": 97
+},
+{
+    "charName": "Yammy-Riyalgo",
+    "charId": 98
+},
+{
+    "charName": "Resurreccion-Yammy",
+    "charId": 99
+},
+{
+    "charName": "Hollow-Ichigo",
+    "charId": 100
+},
+{
+    "charName": "Cirucci-Sanderwicci",
+    "charId": 101
+},
+{
+    "charName": "Don-Panini",
+    "charId": 102
+},
+{
+    "charName": "Ayon",
+    "charId": 103
+},
+{
+    "charName": "Rudbornn-Chelute",
+    "charId": 104
+},
+{
+    "charName": "Wonderweiss-Margela",
+    "charId": 105
+},
+{
+    "charName": "Aaroniero-Arruruerie",
+    "charId": 106
+},
+{
+    "charName": "Szayel-Aporro Granz",
+    "charId": 107
+},
+{
+    "charName": "Zommari-Leroux",
+    "charId": 108
+},
+{
+    "charName": "Luppi-Antenor",
+    "charId": 109
+},
+{
+    "charName": "Grimmjow-Jaegerjaquez",
+    "charId": 110
+},
+{
+    "charName": "Nnoitra-Jiruga",
+    "charId": 111
+},
+{
+    "charName": "Ulquiorra-Cifer",
+    "charId": 112
+},
+{
+    "charName": "Tia-Harribel",
+    "charId": 113
+},
+{
+    "charName": "Barragan-Luisenbarn",
+    "charId": 114
+},
+{
+    "charName": "Coyote-Starrk",
+    "charId": 115
+},
+{
+    "charName": "Resurreccion-Szayel",
+    "charId": 116
+},
+{
+    "charName": "Resurreccion-Grimmjow",
+    "charId": 117
+},
+{
+    "charName": "Resurreccion-Ulquiorra",
+    "charId": 118
+},
+{
+    "charName": "Segunda-Ulquiorra",
+    "charId": 119
+},
+{
+    "charName": "Resurreccion-Harribel",
+    "charId": 120
+},
+{
+    "charName": "Resurreccion-Barragan",
+    "charId": 121
+},
+{
+    "charName": "Resurreccion-Starrk",
+    "charId": 122
+},
+{
+    "charName": "Resurreccion-Wonderweiss",
+    "charId": 123
+},
+{
+    "charName": "Child-Nel",
+    "charId": 124
+},
+{
+    "charName": "Nelliel-Tu Odelschwanck",
+    "charId": 125
+},
+{
+    "charName": "Hollow-Tousen",
+    "charId": 126
+},
+{
+    "charName": "Resurreccion-Tousen",
+    "charId": 127
+},
+{
+    "charName": "Inner-Ichigo",
+    "charId": 128
+},
+{
+    "charName": "Zangetsu",
+    "charId": 129
+},
+{
+    "charName": "Pre-Ascension-Aizen",
+    "charId": 130
+},
+{
+    "charName": "Koutotsu",
+    "charId": 131
+},
+{
+    "charName": "Vizard-Ichigo",
+    "charId": 132
+},
+{
+    "charName": "Yadomaru-Lisa",
+    "charId": 133
+},
+{
+    "charName": "Kuna-Mashiro",
+    "charId": 134
+},
+{
+    "charName": "Sarugaki-Hiyori",
+    "charId": 135
+},
+{
+    "charName": "Ushoda-Hachigen",
+    "charId": 136
+},
+{
+    "charName": "Otoribashi-Rojuro",
+    "charId": 137
+},
+{
+    "charName": "Aikawa-Love",
+    "charId": 138
+},
+{
+    "charName": "Muguruma-Kensei",
+    "charId": 139
+},
+{
+    "charName": "Hirako-Shinji",
+    "charId": 140
+},
+{
+    "charName": "Suzumebachi",
+    "charId": 141
+},
+{
+    "charName": "Tenken",
+    "charId": 142
+},
+{
+    "charName": "Sode-no Shirayuki",
+    "charId": 143
+},
+{
+    "charName": "Kazeshini",
+    "charId": 144
+},
+{
+    "charName": "Ashisogi-Jizo",
+    "charId": 145
+},
+{
+    "charName": "Gonryomaru",
+    "charId": 146
+},
+{
+    "charName": "Koga-Kuchiki",
+    "charId": 147
+},
+{
+    "charName": "Arturo-Plateado",
+    "charId": 148
+},
+{
+    "charName": "Senbonzakura",
+    "charId": 149
+},
+{
+    "charName": "Ruri-Iro Kujaku",
+    "charId": 150
+},
+{
+    "charName": "Hozukimaru",
+    "charId": 151
+},
+{
+    "charName": "Haineko",
+    "charId": 152
+},
+{
+    "charName": "Saru",
+    "charId": 153
+},
+{
+    "charName": "Hebi",
+    "charId": 154
+},
+{
+    "charName": "Muramasa",
+    "charId": 155
+},
+{
+    "charName": "Wabisuke",
+    "charId": 156
+},
+{
+    "charName": "Tobiume",
+    "charId": 157
+},
+{
+    "charName": "Sogyo-no Kotowari",
+    "charId": 158
+},
+{
+    "charName": "Ryujin-Jakka",
+    "charId": 159
+},
+{
+    "charName": "Gegetsuburi",
+    "charId": 160
+},
+{
+    "charName": "Kyokotsu",
+    "charId": 161
+},
+{
+    "charName": "Katen",
+    "charId": 162
+},
+{
+    "charName": "Broly",
+    "charId": 163
+},
+{
+    "charName": "Hyorinmaru",
+    "charId": 164
+},
+{
+    "charName": "Hisagomaru",
+    "charId": 165
+},
+{
+    "charName": "Narunosuke",
+    "charId": 166
+},
+{
+    "charName": "Kyoko-Haida",
+    "charId": 167
+},
+{
+    "charName": "Kirikaze",
+    "charId": 168
+},
+{
+    "charName": "Hollow-Muramasa",
+    "charId": 169
+},
+{
+    "charName": "Sasori-of the Red Sand (S)",
+    "charId": 170
+},
+{
+    "charName": "Fullbringer-Orihime",
+    "charId": 171
+},
+{
+    "charName": "Fullbringer-Sado",
+    "charId": 172
+},
+{
+    "charName": "Uryuu-(TLA)",
+    "charId": 173
+},
+{
+    "charName": "Tsukishima",
+    "charId": 174
+},
+{
+    "charName": "Dangai-Ichigo",
+    "charId": 175
+},
+{
+    "charName": "Chrysalis-Aizen",
+    "charId": 176
+},
+{
+    "charName": "Ascended-Aizen",
+    "charId": 177
+},
+{
+    "charName": "Butterfly-Aizen",
+    "charId": 178
+},
+{
+    "charName": "Final-Aizen",
+    "charId": 179
+},
+{
+    "charName": "Hueco-Mundo Kenpachi",
+    "charId": 180
+},
+{
+    "charName": "Hakuda-Yamamoto",
+    "charId": 181
+},
+{
+    "charName": "Yachiru-Kusajishi",
+    "charId": 182
+},
+{
+    "charName": "Choe-Neng Poww",
+    "charId": 183
+},
+{
+    "charName": "Nirgge-Parduoc",
+    "charId": 184
+},
+{
+    "charName": "Di-Roy Rinker",
+    "charId": 185
+},
+{
+    "charName": "Ashido-Kano",
+    "charId": 186
+},
+{
+    "charName": "Fullbringer-Ichigo-lvl-1",
+    "charId": 187
+},
+{
+    "charName": "Yukio-Vorarlberna",
+    "charId": 188
+},
+{
+    "charName": "Ginjo-Kugo",
+    "charId": 189
+},
+{
+    "charName": "Riruka-Dokugamine",
+    "charId": 190
+},
+{
+    "charName": "Moe-Shishigawara",
+    "charId": 191
+},
+{
+    "charName": "Gengar",
+    "charId": 192
+},
+{
+    "charName": "Ben-10",
+    "charId": 193
+},
+{
+    "charName": "Yin-and Yang",
+    "charId": 194
+},
+{
+    "charName": "Jackie-Tristian",
+    "charId": 195
+},
+{
+    "charName": "Giriko-Kutzusawa",
+    "charId": 196
+},
+{
+    "charName": "Fullbringer-Ichigo-lvl-2",
+    "charId": 197
+},
+{
+    "charName": "Fullbringer-Ichigo-lvl-3",
+    "charId": 198
+},
+{
+    "charName": "Traitor-Ginjo",
+    "charId": 199
+},
+{
+    "charName": "Byakuya-(TLA)",
+    "charId": 200
+},
+{
+    "charName": "Ebern-Asguiaro",
+    "charId": 201
+},
+{
+    "charName": "Quilge-Opie",
+    "charId": 202
+},
+{
+    "charName": "Isshin-Shiba",
+    "charId": 203
+},
+{
+    "charName": "Kurosaki-Masaki",
+    "charId": 204
+},
+{
+    "charName": "As-Nodt",
+    "charId": 205
+},
+{
+    "charName": "Mahito",
+    "charId": 206
+}
+
+,
+  ];
   //Spring method to fade in the entire app over .5 seconds on lunach
 
   //Test function for the character images being clicked to alert the img info
   //Stores teams data as objects into the local storage if present if not sets to empty array
   const data = JSON.parse(window.localStorage.getItem("Your_Teams") || "[]");
-  const teamCount =  (window.localStorage.getItem("Teams_Created") || 0);
+  const teamCount = parseInt(
+    window.localStorage.getItem("Teams_Created") || parseInt(0)
+  );
 
- 
   const [selectedChars, setSelectedChars] = useState([" ", " ", " "]);
 
   //OnClick function for backgrounds removes Bleach text from the img src
@@ -1018,7 +1049,7 @@ const App = () => {
       return "bgSample ";
     }
   }
-   // function to use when character clicked
+  // function to use when character clicked
   function handleSelectCharacter(char) {
     const arrayCopy = [...selectedChars];
     //Checks to see if selected character is already in the array if so do nothing
@@ -1088,7 +1119,7 @@ const App = () => {
 
   //Set intial teams array with 1 object containing a name, id, members array,
   //img src array and member id array
-  const [teams, setTeams] = useState(data);
+  const [teams, setTeams] = useState(data || []);
   //Get teams form previous visit if data is present.
   // useEffect(() => {
   //   data = window.localStorage.getItem("Your_Teams");
@@ -1100,7 +1131,7 @@ const App = () => {
   const [teamName, setTeamName] = useState("Streak");
   const [numOfTeams, setNumOfTeams] = useState(teams.length);
   const [teamNumber, setTeamNumber] = useState(teamCount);
-  const [teamStars, setTeamStars] = useState(4);
+  const [teamStars, setTeamStars] = useState(0);
 
   function addTeam() {
     //If no team name is given the button does nothing
@@ -1116,7 +1147,7 @@ const App = () => {
       Name: teamName,
       Background: teamBg,
       memberID: [1, 2, 3],
-      Members: teamMembers,      
+      Members: teamMembers,
       starNum: teamStars,
       imgSrc: [
         require("./char_images/" + teamMembers[0] + ".webp"),
@@ -1133,38 +1164,40 @@ const App = () => {
     setNumOfTeams(numOfTeams + 1);
     setTeamName(teamName);
     setTeamBg(teamBg);
-    setTeamNumber(teamNumber  + 1) ;
+    setTeamNumber(teamNumber + 1);
     setTeamName("Team" + numOfTeams);
-    setTeamStars(teamStars);
+    setTeamStars(0);
   }
 
-const StarRating = (props) => {
-   const [hover, setHover] = useState(null);
-  return (
-    <div className="starHolder">
-       {[...Array(10)].map((star, index) => {
-        const ratingValue = index + 1;
+  const StarRating = (props) => {
+    const [hover, setHover] = useState(null);
+    return (
+      <div className="starHolder">
+        {[...Array(10)].map((star, index) => {
+          const ratingValue = index + 1;
 
-        return (
-          <label key={index }>
-            <input
-              type="radio"
-              name="rating"
-              value={ratingValue}
-              onClick={() => setTeamRating(props.team,ratingValue)}
-            />
-            <LiaStarSolid
-              color={ratingValue <= (hover || props.stars) ? "yellow" : " "}
-              onMouseEnter={() => setHover(ratingValue)}
-              onMouseLeave={() => setHover(null)}
-              className={props.stars > 6 ? "highRated" : " " } 
-            />
-          </label>
-        );
-      })}
-    </div>
-  );
-};
+          return (
+            <label key={index}>
+              <input 
+                type="radio"
+                name="rating"
+                value={ratingValue}
+                onClick={() => setTeamRating(props.team, ratingValue)}
+              />
+              <GiStarShuriken key={index}
+                color={
+                  ratingValue <= (hover || props.stars) ? "red" : "silver "
+                }
+                onMouseEnter={() => setHover(ratingValue)}
+                onMouseLeave={() => setHover(null)}
+                className={props.stars > 6 ? "highRated" : " "}
+              />
+            </label>
+          );
+        })}
+      </div>
+    );
+  };
 
   function removeTeam(id) {
     //Remove button logic looks for id that matches the clicked removed id and
@@ -1180,40 +1213,40 @@ const StarRating = (props) => {
     setTeams(newTeams);
   }
 
-   function setTeamRating(id,stars) {
-   const target = teams.findIndex((team) => team.TeamNumber === id);
-   teams[target].starNum = stars;
-  setTeamStars(stars);
- }
+  function setTeamRating(id, stars) {
+    const target = teams.findIndex((team) => team.TeamNumber === id);
+    teams[target].starNum = stars;
+    setTeamStars(stars);
+  }
 
-    function deleteAll() {
-       localStorage.clear();
-       setTeams([]);
-       teamCount= 0;      
-    }
+  function deleteAll() {
+    localStorage.clear();
+    setTeams([]);
+    window.localStorage.setItem("Teams_Created", parseInt(0));
+  }
 
   //Update number of teams when a team is added or removed.
   //Output just for testing purposes.
   useEffect(() => {
-    setTeamStars(teamStars);
+    setTeamStars(0);
     // console.log("Number of teams", numOfTeams);
     // console.log("Team Name", teamName);
     // console.log("Team members", teamMembers);
     // console.log("Team number", teamNumber);
     // console.log("Img src ", teamNumber);
     window.localStorage.setItem("Your_Teams", JSON.stringify(teams));
-    window.localStorage.setItem("Teams_Created", JSON.stringify(teamNumber));
-  }, [teams, teamNumber, teamStars, setTeamStars , setTeamRating]);
+    window.localStorage.setItem("Teams_Created", teamNumber);
+  }, [teams, teamNumber, teamStars, setTeamStars ]);
   // componentDidMount();
   //console.log("Selected Chars " + selectedChars);
   return (
     <div className="App">
       <div className="charImageHolder">
         {" "}
-        {charImages.chars.map((charPic) => {
+        {charImages.map((charPic,index) => {
           return (
             <img
-              key={charPic.charID}
+              key={index}
               loading="lazy"
               draggable="true"
               //className={highlightChar(charPic.charID)}
@@ -1254,12 +1287,11 @@ const StarRating = (props) => {
             <p className="important">Select Background: {teamBg}</p>
 
             <br></br>
-            <button className="btn" onClick={() => addTeam()}>
+            <button className="btn add" onClick={() => addTeam()}>
               Add Team
             </button>
- 
 
-            <button className="btn remove" onClick={() => deleteAll()}>
+            <button className="btn delete" onClick={() => deleteAll()}>
               !DELETE ALL!
             </button>
 
@@ -1267,9 +1299,7 @@ const StarRating = (props) => {
               Select 3 characters, a background and "Add Team". Name required.
             </p>
             <p className="important">
-              <span className="important">
-                You have {numOfTeams} team(s)!
-              </span>
+              <span className="important">You have {numOfTeams} team(s)!</span>
             </p>
             <div className="bgsHolder">
               {" "}
@@ -1290,17 +1320,20 @@ const StarRating = (props) => {
       </div>
       <div className="teamsHolder">
         <div className="mainTeamHolder">
-          {teams.map((team) => {
+          {teams.map((team,index) => {
             return (
               <>
-                <div className={"teamBox Bleachbg " + team.Background}>
-                  <p className="teamInfo" key={team.ID}>
+                <div
+                  key={index}
+                  className={"teamBox bleachbg " + team.Background}
+                >
+                  <p key={index} className="teamInfo" >
                     Name: {team.Name} <br />
                     <StarRating stars={team.starNum} team={team.TeamNumber} />
                     Members: {team.Members + " "}
                   </p>
                   {/* MemberID {team.memberID} */}
-                  <img
+                  <img 
                     // onClick={() => speak(team.Members)}
                     loading="lazy"
                     src={team.imgSrc[0]}
@@ -1320,7 +1353,7 @@ const StarRating = (props) => {
                   />
 
                   <button
-                    className="btn delete"
+                    className="btn remove"
                     onClick={() => removeTeam(team.ID)}
                   >
                     Remove
