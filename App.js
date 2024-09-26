@@ -196,7 +196,7 @@ const App = () =>  {
 
   //Idea for allocating character images into an array
   const charImages = [    {
-    "charName": "Kurosaki-Ichigo"
+    "charName": "Kurosaki-Ichigo",
 "charId": 0
 },
 {
