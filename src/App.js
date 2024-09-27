@@ -444,7 +444,7 @@ const App = () =>  {
     "charId": 52
 },
 {
-    "charName": "Final-Form Uryuu",
+    "charName": "Final-Form-Uryuu",
     "charId": 53
 },
 {
@@ -480,7 +480,7 @@ const App = () =>  {
     "charId": 61
 },
 {
-    "charName": "Hueco-Mundo Byakuya",
+    "charName": "Hueco-Mundo-Byakuya",
     "charId": 62
 },
 {
@@ -660,7 +660,7 @@ const App = () =>  {
     "charId": 106
 },
 {
-    "charName": "Szayel-Aporro Granz",
+    "charName": "Szayel-Aporro-Granz",
     "charId": 107
 },
 {
@@ -732,7 +732,7 @@ const App = () =>  {
     "charId": 124
 },
 {
-    "charName": "Nelliel-Tu Odelschwanck",
+    "charName": "Nelliel-Tu-Odelschwanck",
     "charId": 125
 },
 {
@@ -804,7 +804,7 @@ const App = () =>  {
     "charId": 142
 },
 {
-    "charName": "Sode-no Shirayuki",
+    "charName": "Sode-No-Shirayuki",
     "charId": 143
 },
 {
@@ -832,7 +832,7 @@ const App = () =>  {
     "charId": 149
 },
 {
-    "charName": "Ruri-Iro Kujaku",
+    "charName": "Ruri-Iro-Kujaku",
     "charId": 150
 },
 {
@@ -864,7 +864,7 @@ const App = () =>  {
     "charId": 157
 },
 {
-    "charName": "Sogyo-no Kotowari",
+    "charName": "Sogyo-No-Kotowari",
     "charId": 158
 },
 {
@@ -912,7 +912,7 @@ const App = () =>  {
     "charId": 169
 },
 {
-    "charName": "Sasori-of the Red Sand (S)",
+    "charName": "Sasori-Of-The-Red-Sand-(S)",
     "charId": 170
 },
 {
@@ -952,7 +952,7 @@ const App = () =>  {
     "charId": 179
 },
 {
-    "charName": "Hueco-Mundo Kenpachi",
+    "charName": "Hueco-Mundo-Kenpachi",
     "charId": 180
 },
 {
@@ -964,7 +964,7 @@ const App = () =>  {
     "charId": 182
 },
 {
-    "charName": "Choe-Neng Poww",
+    "charName": "Choe-Neng-Poww",
     "charId": 183
 },
 {
@@ -972,7 +972,7 @@ const App = () =>  {
     "charId": 184
 },
 {
-    "charName": "Di-Roy Rinker",
+    "charName": "Di-Roy-Rinker",
     "charId": 185
 },
 {
@@ -1008,7 +1008,7 @@ const App = () =>  {
     "charId": 193
 },
 {
-    "charName": "Yin-and Yang",
+    "charName": "Yin-And-Yang",
     "charId": 194
 },
 {
