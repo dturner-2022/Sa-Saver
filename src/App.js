@@ -190,7 +190,8 @@ const App = () =>  {
       src: "Bleach62",
     },    {
       src: "Bleach63",
-    },    {
+    },    
+    {
       src: "Bleach64",
     }, 
     {
