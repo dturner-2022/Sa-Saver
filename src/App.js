@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { GoStar } from "react-icons/go";
+import {GoStarFill } from "react-icons/go";
 
 
 const App = () =>  {
@@ -1221,7 +1221,7 @@ const App = () =>  {
                 value={ratingValue}
                 onClick={() => setTeamRating(props.team, ratingValue)}
               />
-              <GoStar key={index}
+              <GoStarFill key={index}
                 color={
                   ratingValue <= (hover || props.stars) ? "yellow" : "silver "
                 }

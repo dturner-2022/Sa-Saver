@@ -21,11 +21,13 @@ body {
     color: yellow;
     font-size: 17px;
   }
-.selected{
-  width: 45px;
-  height: 45px;
-  border: solid rgb(240, 111, 25) 3px;
-  background-color: rgba(228, 246, 239, 0.954);}
+  .selected {
+    width: 63px;
+    height: 63px;
+    border: solid rgb(194, 12, 73) 3px;
+    background-color: rgb(224 19 19);
+    transition: 0.2s;
+  }
 html {
   background-Image: url("./site_images/Bleach52.webp") ;
   background-color: black;
