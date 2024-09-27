@@ -213,6 +213,15 @@ const App = () =>  {
     {
       src: "Bleach71",
     }, 
+    {
+      src: "Bleach72",
+    }, 
+    {
+      src: "Bleach73",
+    }, 
+    {
+      src: "Bleach74",
+    }, 
   ];
 
   //Idea for allocating character images into an array
