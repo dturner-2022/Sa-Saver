@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { GiStarShuriken } from "react-icons/gi";
+import { GoStar } from "react-icons/go";
+
 
 const App = () =>  {
   //Bgs  for teams
@@ -1220,9 +1221,9 @@ const App = () =>  {
                 value={ratingValue}
                 onClick={() => setTeamRating(props.team, ratingValue)}
               />
-              <GiStarShuriken key={index}
+              <GoStar key={index}
                 color={
-                  ratingValue <= (hover || props.stars) ? "red" : "silver "
+                  ratingValue <= (hover || props.stars) ? "yellow" : "silver "
                 }
                 onMouseEnter={() => setHover(ratingValue)}
                 onMouseLeave={() => setHover(null)}

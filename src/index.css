@@ -27,7 +27,7 @@ body {
   border: solid rgb(240, 111, 25) 3px;
   background-color: rgba(228, 246, 239, 0.954);}
 html {
-  background-Image: url("./site_images/Bleach62.webp") ;
+  background-Image: url("./site_images/Bleach52.webp") ;
   background-color: black;
 }
 
@@ -365,7 +365,7 @@ input[type="radio"] {
 }
 
 .highRated {
-  border: double 1px rgb(255, 116, 23);
+  border: double 1px rgb(238, 241, 13);
   transition: 0.2s;
  }
 .highRated:hover {
@@ -468,8 +468,8 @@ input {
 .charImage {
   width: 65px;
   height: 65px;
-  border: solid rgb(32, 148, 243) 2px;
-  background-color: rgba(0, 107, 61, 0.9);
+  border: solid rgb(0, 0, 0) 2px;
+  background-color: rgba(119, 5, 5, 0.9);
   transition: 0.2s;
 }
 .charImage:hover {
