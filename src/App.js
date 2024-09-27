@@ -1168,7 +1168,7 @@ const App = () =>  {
   const [teamMembers, setTeamMembers] = useState([]);
   const [teamName, setTeamName] = useState("Streak");
   const [numOfTeams, setNumOfTeams] = useState(teams.length);
-  const [teamNumber, setTeamNumber] = useState(teamCount);
+  const [teamNumber, setTeamNumber] = useState(0);
   const [teamStars, setTeamStars] = useState(0);
 
   function addTeam() {
