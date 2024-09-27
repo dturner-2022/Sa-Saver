@@ -1322,9 +1322,7 @@ const App = () =>  {
               value={teamMembers}
               onChange={(e) => setTeamMembers(e.target.value)}
             />
-            <p className="important">Select Background: {teamBg}</p>
 
-            <br></br>
             <button className="btn add" onClick={() => addTeam()}>
               Add Team
             </button>
@@ -1333,9 +1331,6 @@ const App = () =>  {
               !DELETE ALL!
             </button>
 
-            <p className="important">
-              Select 3 characters, a background and "Add Team". Name required.
-            </p>
             <p className="important">
               <span className="important">You have {numOfTeams} team(s)!</span>
             </p>
