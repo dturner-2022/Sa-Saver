@@ -1060,10 +1060,30 @@ const App = () =>  {
 {
     "charName": "Mahito",
     "charId": 206
-}
+},
+{
+  "charName": "Loyd_Lloyd",
+  "charId": 207
+},
+{
+  "charName": "Driscoll_Berci",
+  "charId": 208
+},
+{
+  "charName": "Cang_Du",
+  "charId": 209
+},
+{
+  "charName": "Bankai_Yamamoto",
+  "charId": 210
+},
+{
+  "charName": "White",
+  "charId": 211
+},
 
-,
   ];
+  
   //Spring method to fade in the entire app over .5 seconds on lunach
 
   //Test function for the character images being clicked to alert the img info
